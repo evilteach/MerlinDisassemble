@@ -44,6 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>true</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -100,10 +101,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <BrowseInformation>true</BrowseInformation>
+      <ExternalWarningLevel>Level2</ExternalWarningLevel>
+      <DisableSpecificWarnings>5045</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,14 +137,17 @@
     <ClInclude Include="MerlinDisassemble.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GcodeBatteryBox.gcode" />
-    <None Include="GcodeJansPointer.gcode" />
-    <None Include="GcodeTestLocalPrinter.gcode" />
-    <None Include="small_leveling.gcode" />
-    <None Include="start.gcode" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+    <None Include="test_data\GcodeBatteryBox.gcode" />
+    <None Include="test_data\GcodeJansPointer.gcode" />
+    <None Include="test_data\GcodeTestLocalPrinter.gcode" />
+    <None Include="test_data\small_leveling.gcode" />
+    <None Include="test_data\start.gcode" />
+    <None Include="test_data\test_rectangle.gcode" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="small_leveling.log" />
+    <Text Include="test_data\small_leveling.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

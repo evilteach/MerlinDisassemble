@@ -1,9 +1,6 @@
 namespace MerlinDisassembleNamespace
 {
-    // BUG lower case arguments don't work.
-    // E is cumulative.
-
-    std::string codes[] =
+    std::string merlinCodes[] =
     {
          "G0,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
         ,"G1,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
@@ -29,11 +26,13 @@ namespace MerlinDisassembleNamespace
         ,"M155,TEMP AUTO REPORT,        SSeconds"
         ,"M190,WAIT BED TEMP,           IIndex, RTemp, STemp, TSeconds"
         ,"M220,SET FEED RATE %,         Backup Factor, Restore Factor, SPercentage"
-        ,"M221,SET FLOW %,              SFlow%, TExtruder"
+        ,"M221,SET FLOW RATE %,         SFlow%, TExtruder"
         ,"T0,  SELECT/REPORT TOOL"
+
+        // DEFFERED BUG more G/M codes as needed.
     };
 
-    std::size_t codesCount = sizeof(codes) / sizeof(codes[0]);
+    std::size_t codesCount = sizeof(merlinCodes) / sizeof(merlinCodes[0]);
 
     class MerlinDisassemble
     {
@@ -146,15 +145,15 @@ namespace MerlinDisassembleNamespace
                         }
                     }
 
-                    for (auto & c: command) c = toupper(c);
+                    for (auto & c: command) c = (char) toupper(c);
 
                     size_t z = 0;
                     for (; z < codesCount; z++)
                     {
-                        std::size_t commaAt = codes[z].find(",");
+                        std::size_t commaAt = merlinCodes[z].find(",");
                         if (commaAt != std::string::npos)
                         {
-                            std::string match = codes[z].substr(0, commaAt);
+                            std::string match = merlinCodes[z].substr(0, commaAt);
                             if (command == match)
                             {
                                 break;
@@ -180,7 +179,7 @@ namespace MerlinDisassembleNamespace
                     }
                     else
                     {
-                        std::istringstream iss3 (codes[z]);
+                        std::istringstream iss3 (merlinCodes[z]);
                         std::getline(iss3, command, ',');
                         oss << std::left << std::setw(5) << command;
 
@@ -217,10 +216,10 @@ namespace MerlinDisassembleNamespace
                                 {
                                     trim(tmp);
                                     std::string actualArgument = tmp.substr(0, 1);
-                                    for (auto &c: actualArgument) c = toupper(c);
+                                    for (auto &c: actualArgument) c = (char) toupper(c);
 
                                     std::string code = knownArgument.substr(0, 1);
-                                    for (auto &c: code) c = toupper(c);
+                                    for (auto &c: code) c = (char) toupper(c);
 
                                     if (actualArgument == code)
                                     {
@@ -290,66 +289,5 @@ namespace MerlinDisassembleNamespace
             }
 
 
-            std::string translate
-            (
-                std::string &line,
-                std::string &comment
-            )
-            {
-                std::ostringstream oss;
-
-                std::string arguments;
-                std::size_t codesAt = line.find(' ');
-                if (codesAt != std::string::npos)
-                {
-                    comment += ";";
-                    comment += line.substr(codesAt);
-                    arguments = line.substr(codesAt);
-                }
-                else
-                {
-                }
-
-                std::string command = line.substr(0, codesAt);
-                for (auto & c: command) c = toupper(c);
-
-
-                size_t z = 0;
-                for (; z < codesCount; z++)
-                {
-                    std::size_t commaAt = codes[z].find(",");
-                    if (commaAt != std::string::npos)
-                    {
-                        std::string match = codes[z].substr(0, commaAt);
-                        if (command == match)
-                        {
-                            arguments = codes[z].substr(commaAt);
-                            break;
-                        }
-                        else
-                        {
-                        }
-                    }
-                    else
-                    {
-                    }
-                }
-
-                if (z == codesCount)
-                {
-
-                    oss << "; " << command << " Unrecognized ";
-                }
-                else
-                {
-                    std::string rightFill (5 - command.size(), ' ');
-                    command += rightFill;
-
-                    oss << command;
-                }
-
-
-                return oss.str();
-            }
     };
 }

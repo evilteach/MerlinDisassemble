@@ -6,19 +6,19 @@
 #include <sstream>
 #include <vector>
 
-#include "Merlindisassemble.hpp"
+#include "MerlinDisassemble.hpp"
 using namespace MerlinDisassembleNamespace;
 
-//  
-//  MerlinDisassemble < input.txt > output.txt
-//  cat input.txt | MerlinDisassemble
-//  cat input.txt | MerlinDisassemble > output.txt
-//  MerlinDisassemble input.txt
-//  MerlinDisassemble input.txt output.txt
-//  
-//  returns 0 on success
-//  returns 1 on failure
-//  
+//                                                                             
+//  MerlinDisassemble < input.txt > output.txt                                 
+//  cat input.txt | MerlinDisassemble                                          
+//  cat input.txt | MerlinDisassemble > output.txt                             
+//  MerlinDisassemble input.txt                                                
+//  MerlinDisassemble input.txt output.txt                                     
+//                                                                             
+//  returns 0 on success                                                       
+//  returns 1 on failure                                                       
+//                                                                             
 int main
 (
     int argC,
@@ -41,7 +41,7 @@ int main
         }
         else
         {
-            int y = 3;
+            // DEFERRED BUG output file/no file 
         }
     }
     catch (const std::exception &e)
