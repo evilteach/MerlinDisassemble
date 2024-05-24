@@ -1,17 +1,17 @@
 namespace MerlinDisassembleNamespace
 {
-    std::string merlinCodes[] =
+    const std::string merlinCodes[] =
     {
          "G0,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
         ,"G1,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
         ,"M20, LIST SD CARD,            FBin Files, LLong File Name, TTimestamp"
-        ,"G28, AUTO HOME,               LRestore Leveling State, OSkip Homing, RRaise Nozzle, XX Axis ,YY Axis, ZZ Axis"
+        ,"G28, AUTO HOME,               LRestore Leveling State, OSkip Homing, RRaise Nozzle, XX Axis, YY Axis, ZZ Axis"
         ,"M80, POWER ON,                SReport Power Supply State"
         ,"G90, ABSOLUTE POSITIONING"
         ,"G91, RELATIVE POSITIONING"
         ,"G92, SET POSITION,            XX, YY, ZZ, EE"
         ,"M82, E ABSOLUTE"
-        ,"M84, DISABLE STEPPERS,        SSeconds, XX Axis,YY Axis, ZZ Axis EExtruder, AA Axis, BB Axis,CC Axis, UU Axis, VV Axis, WW Axis"
+        ,"M84, DISABLE STEPPERS,        SSeconds, XX Axis,YY Axis, ZZ Axis, EExtruder, AA Axis, BB Axis, CC Axis, UU Axis, VV Axis, WW Axis"
         ,"M104,START HOTEND TEMP,       BMaxAutoTemp, FAutoTemp Flag, IMaterial Preset Index, STemp, THotend"
         ,"M105,REPORT TEMP,             RRedundant Temp, THotEnd"
         ,"M106,SET FAN SPEED,           IMaterial preset, PFan, SSpeed, TSecondary Speed"
@@ -32,7 +32,7 @@ namespace MerlinDisassembleNamespace
         // DEFFERED BUG more G/M codes as needed.
     };
 
-    std::size_t codesCount = sizeof(merlinCodes) / sizeof(merlinCodes[0]);
+    std::size_t merlinCodesCount = sizeof(merlinCodes) / sizeof(merlinCodes[0]);
 
     class MerlinDisassemble
     {
@@ -120,6 +120,7 @@ namespace MerlinDisassembleNamespace
                     }
 
                     {
+                        // Get the comment if there is one.
                         comment = "";
                         std::size_t foundAt = line.find(";");
                         if (foundAt != std::string::npos)
@@ -133,9 +134,11 @@ namespace MerlinDisassembleNamespace
                     }
 
                     {
+                        // Get the command and any arguments it has.
                         std::string tmp;
                         std::istringstream iss (line);
                         std::getline(iss, command, ' ');
+                        uppercase(command);
 
                         arguments.clear();
 
@@ -152,10 +155,9 @@ namespace MerlinDisassembleNamespace
                         }
                     }
 
-                    uppercase(command);
-
+                    // Try to find the merlinCode for this one.
                     size_t z = 0;
-                    for (; z < codesCount; z++)
+                    for (; z < merlinCodesCount; z++)
                     {
                         std::size_t commaAt = merlinCodes[z].find(",");
                         if (commaAt != std::string::npos)
@@ -174,10 +176,11 @@ namespace MerlinDisassembleNamespace
                         }
                     }
 
-                    if (z == codesCount)
+                    if (z == merlinCodesCount)
                     {
                         if (command == "")
                         {
+                            // Blank commands aren't interesting.
                         }
                         else
                         {
@@ -186,6 +189,7 @@ namespace MerlinDisassembleNamespace
                     }
                     else
                     {
+                        // Attempt to display the line in a more human readable form.
                         std::istringstream merlinCodeStream (merlinCodes[z]);
                         std::getline(merlinCodeStream, command, ',');
                         oss << std::left << std::setw(5) << command;
@@ -197,7 +201,7 @@ namespace MerlinDisassembleNamespace
 
                         if (command == "M117")
                         {
-                            // It is literally just a string
+                            // It is literally just a set of strings.
                             for (auto &argument : arguments)
                             {
                                 oss << argument << " ";
@@ -205,61 +209,60 @@ namespace MerlinDisassembleNamespace
                         }
                         else
                         {
-                            bool checkExtrusion = false;
+                            bool showActualExtrusion = false;
                             if (command == "G0" || command == "G1")
                             {
-                                checkExtrusion = true;
+                                showActualExtrusion = true;
                             }
                             else
                             {
+                                // We don't need to show anything for this Merlin code.
                             }
 
-                            // Check each code that the gcode supports
+                            // Check all of the arguments that this Merlin Code supports.
                             std::string referenceArgument;
                             while (std::getline(merlinCodeStream, referenceArgument, ','))
                             {
                                 trim(referenceArgument);
                                 for (auto &argument : arguments)
                                 {
-                                    if (argument.empty())
-                                    {
-                                        continue;
-                                    }
-                                    else
-                                    {
-                                    }
-
                                     trim(argument);
+
+                                    // Get the actual argument info.
                                     std::string actualArgumentType  = argument.substr(0, 1);
                                     std::string actualArgumentValue = argument.substr(1);
                                     uppercase(actualArgumentType);
 
+                                    // Get the reference argument info.
                                     std::string referenceArgumentType = referenceArgument.substr(0, 1);
-                                    std::string referenceArgumentValue = referenceArgument.substr(1);
+                                    std::string referenceArgumentName = referenceArgument.substr(1);
                                     uppercase(referenceArgumentType);
 
+                                    // If they are the same we can display something
                                     if (actualArgumentType == referenceArgumentType)
                                     {
-                                        if (checkExtrusion && referenceArgumentType == "E")
+                                        if (showActualExtrusion && referenceArgumentType == "E")
                                         {
+                                            // Show E value with calculated extrusion
                                             double extrusionAmount = atof(actualArgumentValue.c_str()) - lastExtrusion;
                                             lastExtrusion = atof(actualArgumentValue.c_str());
 
-                                            oss << referenceArgumentValue << ":" << actualArgumentValue << "(" << extrusionAmount << "), ";
+                                            oss << referenceArgumentName << ":" << actualArgumentValue << "(" << extrusionAmount << "), ";
                                         }
                                         else
                                         {
-                                            oss << referenceArgumentValue << ":" << actualArgumentValue << ", ";
+                                            // Just show what ever the value is.
+                                            oss << referenceArgumentName << ":" << actualArgumentValue << ", ";
                                         }
                                     }
                                     else
                                     {
-                                        // This code is not used.
+                                        // This argument is not used.
                                     }
                                 }
                             }
 
-                            // Replace last commas
+                            // Hide the last comma.
                             std::string tmp = oss.str();
                             tmp.pop_back();
                             tmp.pop_back();
