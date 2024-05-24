@@ -21,7 +21,7 @@ namespace MerlinDisassembleNamespace
         ,"M111,SET DEBUG LEVEL,         SFlags"
         ,"M114,GET CURRENT POS,         DDetailed, EStepper, RReal"
         ,"M115,SHOW FIRMWARE INFO"
-        ,"M117,SET LCD MESSAGE,         *"
+        ,"M117,SET LCD MESSAGE"
         ,"M140,START BED TEMP,          IIndex, STemp"
         ,"M155,TEMP AUTO REPORT,        SSeconds"
         ,"M190,WAIT BED TEMP,           IIndex, RTemp, STemp, TSeconds"
@@ -179,12 +179,12 @@ namespace MerlinDisassembleNamespace
                     }
                     else
                     {
-                        std::istringstream iss3 (merlinCodes[z]);
-                        std::getline(iss3, command, ',');
+                        std::istringstream merlinCodeStream (merlinCodes[z]);
+                        std::getline(merlinCodeStream, command, ',');
                         oss << std::left << std::setw(5) << command;
 
                         std::string description;
-                        std::getline(iss3, description, ',');
+                        std::getline(merlinCodeStream, description, ',');
                         trim(description);
                         oss << std::left << std::setw(23) << description;
 
@@ -208,34 +208,41 @@ namespace MerlinDisassembleNamespace
                             }
 
                             // Check each code that the gcode supports
-                            std::string knownArgument;
-                            while (std::getline(iss3, knownArgument, ','))
+                            std::string referenceArgument;
+                            while (std::getline(merlinCodeStream, referenceArgument, ','))
                             {
-                                trim(knownArgument);
-                                for (auto &tmp : arguments)
+                                trim(referenceArgument);
+                                for (auto &argument : arguments)
                                 {
-                                    trim(tmp);
-                                    std::string actualArgument = tmp.substr(0, 1);
-                                    for (auto &c: actualArgument) c = (char) toupper(c);
-
-                                    std::string code = knownArgument.substr(0, 1);
-                                    for (auto &c: code) c = (char) toupper(c);
-
-                                    if (actualArgument == code)
+                                    if (argument.empty())
                                     {
-                                        if (checkExtrusion && code == "E")
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                    }
+
+                                    trim(argument);
+                                    std::string actualArgumentType  = argument.substr(0, 1);
+                                    std::string actualArgumentValue = argument.substr(1);
+                                    for (auto &c: actualArgumentType) c = (char) toupper(c);
+
+                                    std::string referenceArgumentType = referenceArgument.substr(0, 1);
+                                    std::string referenceArgumentValue = referenceArgument.substr(1);
+                                    for (auto &c: referenceArgumentType) c = (char) toupper(c);
+
+                                    if (actualArgumentType == referenceArgumentType)
+                                    {
+                                        if (checkExtrusion && referenceArgumentType == "E")
                                         {
-                                            std::string value = tmp.substr(1);
-                                            double thisExtrusion = atof(value.c_str()) - lastExtrusion;
-                                            lastExtrusion = atof(value.c_str());
+                                            double extrusionAmount = atof(actualArgumentValue.c_str()) - lastExtrusion;
+                                            lastExtrusion = atof(actualArgumentValue.c_str());
 
-                                            oss << code << ":" << value << "(" << thisExtrusion << "), ";
-
+                                            oss << referenceArgumentValue << ":" << actualArgumentValue << "(" << extrusionAmount << "), ";
                                         }
                                         else
                                         {
-                                            std::string value = tmp.substr(1);
-                                            oss << code << ":" << value << ", ";
+                                            oss << referenceArgumentValue << ":" << actualArgumentValue << ", ";
                                         }
                                     }
                                     else
@@ -287,7 +294,5 @@ namespace MerlinDisassembleNamespace
                 line.erase(line.find_last_not_of("\n\r ") + 1);
                 line.erase(0, line.find_first_not_of("\n\r "));
             }
-
-
     };
 }
