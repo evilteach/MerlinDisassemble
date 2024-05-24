@@ -1,0 +1,288 @@
+17:44:16.433 : CuraEngine command:C:\Software\Repetier-Host\plugins\CuraEngine\CuraEngine.exe -p -v -c "C:\Users\jslater\AppData\Local\RepetierHost\cura.ini" -s posx=0 -s posy=0 -o "C:\Users\jslater\AppData\Local\RepetierHost\composition.gcode" "C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl"
+17:44:16.483 : Preferred name from leveling_small to leveling_small
+17:44:16.503 : <CuraEngine> Cura_SteamEngine version 15.01
+17:44:16.504 : <CuraEngine> Copyright (C) 2014 David Braam
+17:44:16.504 : <CuraEngine> This program is free software: you can redistribute it and/or modify
+17:44:16.504 : <CuraEngine> it under the terms of the GNU Affero General Public License as published by
+17:44:16.504 : <CuraEngine> the Free Software Foundation, either version 3 of the License, or
+17:44:16.504 : <CuraEngine> (at your option) any later version.
+17:44:16.504 : <CuraEngine> This program is distributed in the hope that it will be useful,
+17:44:16.504 : <CuraEngine> but WITHOUT ANY WARRANTY; without even the implied warranty of
+17:44:16.504 : <CuraEngine> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+17:44:16.504 : <CuraEngine> GNU Affero General Public License for more details.
+17:44:16.504 : <CuraEngine> You should have received a copy of the GNU Affero General Public License
+17:44:16.504 : <CuraEngine> along with this program.  If not, see <http://www.gnu.org/licenses/>.
+17:44:16.504 : <CuraEngine> Default config 'default.cfg' not used
+17:44:16.504 : <CuraEngine> Loading C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl from disk...
+17:44:16.504 : <CuraEngine> Loaded from disk in 0.000s
+17:44:16.504 : <CuraEngine> Analyzing and optimizing model...
+17:44:16.504 : <CuraEngine>   Face counts: 76 -> 76 100.0%
+17:44:16.504 : <CuraEngine>   Vertex counts: 228 -> 32 14.0%
+17:44:16.504 : <CuraEngine>   Size: 99.411000 99.411000 0.200000
+17:44:16.504 : <CuraEngine>   vMin: 100.294000 100.294000 0.000000
+17:44:16.504 : <CuraEngine>   vMax: 199.705000 199.705000 0.200000
+17:44:16.504 : <CuraEngine>   vMin: 100.294000 100.294000 0.000000
+17:44:16.504 : <CuraEngine>   vMax: 199.705000 199.705000 0.200000
+17:44:16.504 : <CuraEngine>   Matrix: 1.000000 0.000000 0.000000
+17:44:16.504 : <CuraEngine>   Matrix: 0.000000 1.000000 0.000000
+17:44:16.504 : <CuraEngine>   Matrix: 0.000000 0.000000 1.000000
+17:44:16.504 : <CuraEngine> Optimize model 0.000s 
+17:44:16.504 : <CuraEngine> Slicing model...
+17:44:16.504 : <CuraEngine> Layer count: 1
+17:44:16.504 : <CuraEngine> Sliced model in 0.000s
+17:44:16.504 : <CuraEngine> Generating support map...
+17:44:16.504 : <CuraEngine> Generating layer parts...
+17:44:16.504 : <CuraEngine> Generated layer parts in 0.000s
+17:44:16.507 : <CuraEngine> Generated inset in 0.000s
+17:44:16.511 : <CuraEngine> Generated up/down skin in 0.000s
+17:44:16.513 : <CuraEngine> Wrote layers in  0.00s.
+17:44:16.513 : <CuraEngine> Wrote   1.6 kilobytes.
+17:44:16.515 : <CuraEngine> Total time elapsed  0.00s.
+17:44:16.515 : <CuraEngine> Print time: 61
+17:44:16.515 : <CuraEngine> Filament: 88
+17:44:16.515 : <CuraEngine> Filament2: 0
+17:44:27.219 : Starting object analyser ...
+17:44:27.219 : Object is manifold.
+17:44:27.219 : Analysing finished.
+17:44:38.885 : CuraEngine command:C:\Software\Repetier-Host\plugins\CuraEngine\CuraEngine.exe -p -v -c "C:\Users\jslater\AppData\Local\RepetierHost\cura.ini" -s posx=0 -s posy=0 -o "C:\Users\jslater\AppData\Local\RepetierHost\composition.gcode" "C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl"
+17:44:38.887 : Preferred name from leveling_small to leveling_small
+17:44:38.909 : <CuraEngine> Cura_SteamEngine version 15.01
+17:44:38.909 : <CuraEngine> Copyright (C) 2014 David Braam
+17:44:38.909 : <CuraEngine> This program is free software: you can redistribute it and/or modify
+17:44:38.909 : <CuraEngine> it under the terms of the GNU Affero General Public License as published by
+17:44:38.909 : <CuraEngine> the Free Software Foundation, either version 3 of the License, or
+17:44:38.909 : <CuraEngine> (at your option) any later version.
+17:44:38.909 : <CuraEngine> This program is distributed in the hope that it will be useful,
+17:44:38.909 : <CuraEngine> but WITHOUT ANY WARRANTY; without even the implied warranty of
+17:44:38.909 : <CuraEngine> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+17:44:38.909 : <CuraEngine> GNU Affero General Public License for more details.
+17:44:38.909 : <CuraEngine> You should have received a copy of the GNU Affero General Public License
+17:44:38.909 : <CuraEngine> along with this program.  If not, see <http://www.gnu.org/licenses/>.
+17:44:38.909 : <CuraEngine> Default config 'default.cfg' not used
+17:44:38.910 : <CuraEngine> Loading C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl from disk...
+17:44:38.910 : <CuraEngine> Loaded from disk in 0.000s
+17:44:38.910 : <CuraEngine> Analyzing and optimizing model...
+17:44:38.910 : <CuraEngine>   Face counts: 76 -> 76 100.0%
+17:44:38.910 : <CuraEngine>   Vertex counts: 228 -> 32 14.0%
+17:44:38.910 : <CuraEngine>   Size: 99.411000 99.411000 0.200000
+17:44:38.910 : <CuraEngine>   vMin: 47.294000 100.294000 0.000000
+17:44:38.910 : <CuraEngine>   vMax: 146.705000 199.705000 0.200000
+17:44:38.910 : <CuraEngine>   vMin: 47.294000 100.294000 0.000000
+17:44:38.910 : <CuraEngine>   vMax: 146.705000 199.705000 0.200000
+17:44:38.910 : <CuraEngine>   Matrix: 1.000000 0.000000 0.000000
+17:44:38.910 : <CuraEngine>   Matrix: 0.000000 1.000000 0.000000
+17:44:38.910 : <CuraEngine>   Matrix: 0.000000 0.000000 1.000000
+17:44:38.910 : <CuraEngine> Optimize model 0.000s 
+17:44:38.910 : <CuraEngine> Slicing model...
+17:44:38.910 : <CuraEngine> Layer count: 1
+17:44:38.910 : <CuraEngine> Sliced model in 0.000s
+17:44:38.910 : <CuraEngine> Generating support map...
+17:44:38.910 : <CuraEngine> Generating layer parts...
+17:44:38.910 : <CuraEngine> Generated layer parts in 0.000s
+17:44:38.952 : <CuraEngine> Generated inset in 0.000s
+17:44:39.030 : <CuraEngine> Generated up/down skin in 0.000s
+17:44:39.033 : <CuraEngine> Wrote layers in  0.00s.
+17:44:39.033 : <CuraEngine> Wrote   1.6 kilobytes.
+17:44:39.035 : <CuraEngine> Total time elapsed  0.00s.
+17:44:39.035 : <CuraEngine> Print time: 60
+17:44:39.035 : <CuraEngine> Filament: 88
+17:44:39.035 : <CuraEngine> Filament2: 0
+17:44:52.071 : Printer reset detected - initializing
+17:44:52.071 : start
+17:44:52.071 : echo:Marlin 1.1.9.1
+17:44:52.073 : echo: Last Updated: 2020-06-20 | Author: (none, default config)
+17:44:52.074 : echo:Compiled: May 11 2024
+17:44:52.077 : echo: Free Memory: 4777  PlannerBufferBytes: 1232
+17:44:52.095 : echo:V56 stored settings retrieved (656 bytes; crc 29670)
+17:44:52.097 : echo:  G21    ; (mm)
+17:44:52.098 : echo:  M149 C ; Units in Celsius
+17:44:52.099 : echo:Filament settings: Disabled
+17:44:52.100 : echo:  M200 D0.00
+17:44:52.101 : echo:  M200 D0
+17:44:52.102 : echo:Steps per unit:
+17:44:52.103 : echo:  M92 X79.50 Y80.00 Z415.51 E450.00
+17:44:52.104 : echo:Maximum feedrates (units/s):
+17:44:52.106 : echo:  M203 X300.00 Y300.00 Z5.00 E25.00
+17:44:52.108 : echo:Maximum Acceleration (units/s2):
+17:44:52.110 : echo:  M201 X3000 Y3000 Z100 E10000
+17:44:52.112 : echo:Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
+17:44:52.114 : echo:  M204 P3000.00 R3000.00 T3000.00
+17:44:52.119 : echo:Advanced: Q<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> X<max_x_jerk> Y<max_y_jerk> Z<max_z_jerk> E<max_e_jerk>
+17:44:52.122 : echo:  M205 Q20000 S0.00 T0.00 X10.00 Y10.00 Z0.30 E5.00
+17:44:52.123 : echo:Home offset:
+17:44:52.124 : echo:  M206 X0.00 Y0.00 Z0.00
+17:44:52.126 : echo:Material heatup parameters:
+17:44:52.127 : echo:  M145 S0 H205 B65 F0
+17:44:52.128 : echo:  M145 S1 H230 B110 F0
+17:44:52.128 : echo:PID settings:
+17:44:52.130 : echo:  M301 P22.13 I1.66 D73.86
+17:44:52.132 : echo:  M304 P148.93 I23.01 D240.96
+17:44:52.273 : N1 M110*34
+17:44:52.273 : N2 M115*36
+17:44:52.273 : N3 M105*36
+17:44:52.273 : N4 M114*35
+17:44:52.273 : N5 M111 S6*98
+17:44:52.277 : N6 T0*60
+17:44:52.277 : N7 M20*22
+17:44:52.279 : N8 M80*19
+17:44:55.124 : FIRMWARE_NAME:Marlin 1.1.9.1 (Github) SOURCE_CODE_URL:https://github.com/MarlinFirmware/Marlin PROTOCOL_VERSION:1.0 MACHINE_TYPE:Shared Jan 1.6 EXTRUDER_COUNT:1 UUID:cede2a2f-41a2-4748-9b12-c55c62f367ff
+17:44:55.124 : N9 M220 S100*104
+17:44:55.124 : N10 M221 S100*81
+17:44:55.124 : Cap:SERIAL_XON_XOFF:0
+17:44:55.125 : Cap:EEPROM:1
+17:44:55.125 : Cap:VOLUMETRIC:1
+17:44:55.125 : Cap:AUTOREPORT_TEMP:1
+17:44:55.126 : Cap:PROGRESS:0
+17:44:55.127 : Cap:PRINT_JOB:1
+17:44:55.128 : Cap:AUTOLEVEL:0
+17:44:55.128 : Cap:Z_PROBE:0
+17:44:55.129 : Cap:LEVELING_DATA:0
+17:44:55.129 : Cap:BUILD_PERCENT:0
+17:44:55.130 : Cap:SOFTWARE_POWER:0
+17:44:55.132 : Cap:TOGGLE_LIGHTS:0
+17:44:55.132 : Cap:CASE_LIGHT_BRIGHTNESS:0
+17:44:55.133 : Cap:EMERGENCY_PARSER:0
+17:44:55.134 : Cap:AUTOREPORT_SD_STATUS:0
+17:44:55.136 : Cap:THERMAL_PROTECTION:1
+17:44:55.136 : N11 M111 S6*87
+17:44:55.164 : N12 T0*9
+17:44:55.170 : X:0.00 Y:0.00 Z:0.00 E:0.00 Count X:0 Y:0 Z:0
+17:44:55.170 : N13 M155 S1*82
+17:44:55.181 : echo:DEBUG:INFO,ERRORS
+17:44:55.183 : echo:Active Extruder: 0
+17:44:55.184 : echo:Unknown command: "M20"
+17:44:55.186 : echo:Unknown command: "M80"
+17:44:55.188 : echo:DEBUG:INFO,ERRORS
+17:44:55.190 : echo:Active Extruder: 0
+17:44:58.430 : CuraEngine command:C:\Software\Repetier-Host\plugins\CuraEngine\CuraEngine.exe -p -v -c "C:\Users\jslater\AppData\Local\RepetierHost\cura.ini" -s posx=0 -s posy=0 -o "C:\Users\jslater\AppData\Local\RepetierHost\composition.gcode" "C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl"
+17:44:58.432 : Preferred name from leveling_small to leveling_small
+17:44:58.453 : <CuraEngine> Cura_SteamEngine version 15.01
+17:44:58.453 : <CuraEngine> Copyright (C) 2014 David Braam
+17:44:58.453 : <CuraEngine> This program is free software: you can redistribute it and/or modify
+17:44:58.453 : <CuraEngine> it under the terms of the GNU Affero General Public License as published by
+17:44:58.453 : <CuraEngine> the Free Software Foundation, either version 3 of the License, or
+17:44:58.453 : <CuraEngine> (at your option) any later version.
+17:44:58.453 : <CuraEngine> This program is distributed in the hope that it will be useful,
+17:44:58.453 : <CuraEngine> but WITHOUT ANY WARRANTY; without even the implied warranty of
+17:44:58.453 : <CuraEngine> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+17:44:58.453 : <CuraEngine> GNU Affero General Public License for more details.
+17:44:58.453 : <CuraEngine> You should have received a copy of the GNU Affero General Public License
+17:44:58.453 : <CuraEngine> along with this program.  If not, see <http://www.gnu.org/licenses/>.
+17:44:58.453 : <CuraEngine> Default config 'default.cfg' not used
+17:44:58.454 : <CuraEngine> Loading C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl from disk...
+17:44:58.454 : <CuraEngine> Loaded from disk in 0.000s
+17:44:58.454 : <CuraEngine> Analyzing and optimizing model...
+17:44:58.454 : <CuraEngine>   Face counts: 76 -> 76 100.0%
+17:44:58.454 : <CuraEngine>   Vertex counts: 228 -> 32 14.0%
+17:44:58.454 : <CuraEngine>   Size: 99.411000 99.411000 0.200000
+17:44:58.454 : <CuraEngine>   vMin: 47.294000 100.294000 0.000000
+17:44:58.454 : <CuraEngine>   vMax: 146.705000 199.705000 0.200000
+17:44:58.454 : <CuraEngine>   vMin: 47.294000 100.294000 0.000000
+17:44:58.454 : <CuraEngine>   vMax: 146.705000 199.705000 0.200000
+17:44:58.454 : <CuraEngine>   Matrix: 1.000000 0.000000 0.000000
+17:44:58.454 : <CuraEngine>   Matrix: 0.000000 1.000000 0.000000
+17:44:58.454 : <CuraEngine>   Matrix: 0.000000 0.000000 1.000000
+17:44:58.454 : <CuraEngine> Optimize model 0.000s 
+17:44:58.454 : <CuraEngine> Slicing model...
+17:44:58.454 : <CuraEngine> Layer count: 1
+17:44:58.454 : <CuraEngine> Sliced model in 0.000s
+17:44:58.454 : <CuraEngine> Generating support map...
+17:44:58.454 : <CuraEngine> Generating layer parts...
+17:44:58.454 : <CuraEngine> Generated layer parts in 0.000s
+17:44:58.501 : <CuraEngine> Generated inset in 0.000s
+17:44:58.580 : <CuraEngine> Generated up/down skin in 0.000s
+17:44:58.582 : <CuraEngine> Wrote layers in  0.00s.
+17:44:58.582 : <CuraEngine> Wrote   1.6 kilobytes.
+17:44:58.584 : <CuraEngine> Total time elapsed  0.00s.
+17:44:58.584 : <CuraEngine> Print time: 60
+17:44:58.584 : <CuraEngine> Filament: 88
+17:44:58.584 : <CuraEngine> Filament2: 0
+17:45:05.109 : N14 M117 ********** START BEGINS*101
+17:45:05.110 : N15 G28*39
+17:45:05.110 : N16 G1 Z15 F100*54
+17:45:05.110 : N17 M107*19
+17:45:05.110 : N18 G90*41
+17:45:05.110 : N19 M82*33
+17:45:05.111 : N20 M190 S50*111
+17:45:05.116 : N21 M104 T0 S210*17
+17:45:05.116 : N22 G92 E0*119
+17:45:30.849 : X:0.00 Y:0.00 Z:0.00 E:0.00 Count X:0 Y:0 Z:0
+17:45:30.852 : N23 M117 ETE 1m 05s*75
+17:45:30.855 : X:0.00 Y:0.00 Z:15.00 E:0.00 Count X:0 Y:0 Z:0
+17:45:30.857 : N24 M109 T0 S210*25
+17:45:30.857 : N25 M117 ********** START ENDS*111
+17:45:30.859 : N26 M107*17
+17:45:30.865 : N27 G0 X44.094 Y97.094 Z0.3 F9000*43
+17:46:24.128 : N28 M117 ETE 1m 04s*65
+17:46:24.129 : N29 M140 S50*107
+17:46:24.132 : N30 M106 P0 S255*22
+17:46:24.132 : Printing layer 1 of 1
+17:46:24.133 : N31 G1 F1800 X149.905 Y97.094 E5.27893*14
+17:46:24.139 : N32 G1 X149.905 Y202.905 E10.55786*103
+17:46:24.139 : N33 G1 X44.094 Y202.905 E15.83680*82
+17:46:24.144 : N34 G1 X44.094 Y97.094 E21.11573*105
+17:46:24.148 : N35 G1 F2400 E17.11573*2
+17:46:24.150 : N36 G0 X47.494 Y100.494 F9000*64
+17:46:24.150 : N37 G1 F2400 E21.11573*5
+17:46:24.188 : N38 M117 ETE 49s*53
+17:46:24.189 : N39 G1 F1800 X146.505 Y100.494 E26.05541*13
+17:46:24.226 : N40 G1 X146.505 Y199.505 E30.99509*107
+17:46:24.227 : N41 G1 X47.494 Y199.505 E35.93477*84
+17:46:24.230 : N42 G1 X47.494 Y100.494 E40.87444*89
+17:46:24.239 : N43 G0 X47.752 Y100.878 F9000*69
+17:46:24.267 : N44 G1 F1800 X47.505 Y100.980 E40.88778*50
+17:46:24.273 : N45 G1 X47.505 Y199.018 E45.77891*89
+17:46:24.281 : N46 G1 X47.752 Y199.120 E45.79224*90
+17:46:24.286 : N47 G1 X96.872 Y150.000 E49.25793*80
+17:46:24.290 : N48 G1 X47.752 Y100.878 E52.72368*84
+17:46:27.140 : N49 G0 X47.879 Y100.752 F9000*78
+17:46:30.681 : N50 M117 ETE 26s*50
+17:46:34.224 : N51 G1 F1800 X97.000 Y149.872 E56.18939*63
+17:46:37.764 : N52 M117 ETE 24s*50
+17:46:37.764 : N53 G1 X146.120 Y100.752 E59.65508*103
+17:46:41.308 : N54 M117 ETE 21s*49
+17:46:41.309 : N55 G1 X146.018 Y100.505 E59.66841*104
+17:46:41.475 : N56 G1 X47.981 Y100.505 E64.55949*85
+17:46:41.475 : N57 G1 X47.879 Y100.752 E64.57283*93
+17:46:41.544 : N58 G1 F2400 E60.57283*3
+17:46:41.709 : N59 G0 X97.127 Y150 F9000*91
+17:46:41.709 : N60 G1 F2400 E64.57283*12
+17:46:48.335 : N61 M117 ETE 17s*50
+17:46:48.336 : N62 G1 F1800 X146.247 Y199.120 E68.03851*8
+17:46:54.960 : N63 M117 ETE 14s*51
+17:46:54.961 : N64 G1 X146.494 Y199.018 E68.05184*100
+17:46:54.979 : N65 G1 X146.494 Y100.980 E72.94298*96
+17:46:54.979 : N66 G1 X146.247 Y100.878 E72.95631*107
+17:46:54.992 : N67 G1 X97.127 Y150.000 E76.42206*94
+17:46:58.273 : N68 M117 ETE 08s*53
+17:46:58.273 : N69 G0 X97 Y150.127 F9000*88
+17:47:00.605 : N70 M117 ETE 08s*60
+17:47:00.606 : N71 G1 F1800 X47.879 Y199.247 E79.88778*56
+17:47:02.926 : N72 G1 X47.981 Y199.494 E79.90111*90
+17:47:02.926 : N73 G1 X146.018 Y199.494 E84.79219*108
+17:47:02.934 : N74 G1 X146.120 Y199.247 E84.80553*102
+17:47:05.257 : N75 M117 ETE 02s*51
+17:47:07.575 : N76 G1 X97.000 Y150.127 E88.27121*90
+17:47:07.575 : N77 G1 F2400 E84.27121*8
+17:47:07.601 : N78 G0 X97 Y150.127 Z5.2 F9000*11
+17:47:10.863 : N79 M117 ETE 00s*61
+17:47:10.877 : N80 M117 *********************** END BEGINS*77
+17:47:11.043 : N81 G1 X0 Y280 Z130*82
+17:47:11.043 : N82 M107*31
+17:47:11.043 : N83 G91*42
+17:47:11.048 : N84 T0*6
+17:47:11.048 : N85 G1 E-1*108
+17:47:11.051 : N86 M104 T0 S0*31
+17:47:11.051 : N87 G90*47
+17:47:11.057 : N88 G92 E0*119
+17:47:11.548 : N89 M84*46
+17:47:53.827 : echo:Active Extruder: 0
+17:47:53.827 : N90 M117 ETE -*100
+17:47:53.830 : Printjob finished at 2024-05-21 17:47
+17:47:53.830 : Printing Time: 2m:48s
+17:47:53.830 : Lines Send: 63
+17:47:53.891 : N91 M117 *********************** END ENDS*69
+17:47:53.891 : X:0.00 Y:280.00 Z:130.00 E:0.00 Count X:0 Y:22400 Z:54016
+17:47:53.892 : N92 M104 T0 S0*26
+17:47:53.893 : N93 M140 S0*95
+17:47:53.893 : N94 M84*34
