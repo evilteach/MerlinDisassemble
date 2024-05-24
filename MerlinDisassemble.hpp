@@ -81,7 +81,7 @@ namespace MerlinDisassembleNamespace
 
                     {
                         // Maybe this is a log file instead of a gcode file.
-                        if 
+                        if
                         (
                             isdigit(line[0]) &&
                             isdigit(line[1]) &&
@@ -141,11 +141,18 @@ namespace MerlinDisassembleNamespace
 
                         while (std::getline(iss, tmp, ' '))
                         {
-                            arguments.push_back(tmp);
+                            if (tmp.empty())
+                            {
+                                // We don't really care about blanks
+                            }
+                            else
+                            {
+                                arguments.push_back(tmp);
+                            }
                         }
                     }
 
-                    for (auto & c: command) c = (char) toupper(c);
+                    uppercase(command);
 
                     size_t z = 0;
                     for (; z < codesCount; z++)
@@ -225,11 +232,11 @@ namespace MerlinDisassembleNamespace
                                     trim(argument);
                                     std::string actualArgumentType  = argument.substr(0, 1);
                                     std::string actualArgumentValue = argument.substr(1);
-                                    for (auto &c: actualArgumentType) c = (char) toupper(c);
+                                    uppercase(actualArgumentType);
 
                                     std::string referenceArgumentType = referenceArgument.substr(0, 1);
                                     std::string referenceArgumentValue = referenceArgument.substr(1);
-                                    for (auto &c: referenceArgumentType) c = (char) toupper(c);
+                                    uppercase(referenceArgumentType);
 
                                     if (actualArgumentType == referenceArgumentType)
                                     {
@@ -278,7 +285,8 @@ namespace MerlinDisassembleNamespace
                     }
 
                     oss << comment;
-                    std::cout << oss.str() << std::endl;
+
+                    out << oss.str() << std::endl;
                 }
 
                 return returnStatus;
@@ -293,6 +301,14 @@ namespace MerlinDisassembleNamespace
             {
                 line.erase(line.find_last_not_of("\n\r ") + 1);
                 line.erase(0, line.find_first_not_of("\n\r "));
+            }
+
+            void uppercase
+            (
+                std::string &value
+            )
+            {
+                for (auto &c: value) c = (char) toupper(c);
             }
     };
 }

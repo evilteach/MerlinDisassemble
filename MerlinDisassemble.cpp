@@ -16,6 +16,8 @@ using namespace MerlinDisassembleNamespace;
 //  MerlinDisassemble input.txt                                                
 //  MerlinDisassemble input.txt output.txt                                     
 //                                                                             
+//  Maybe --line_number:width --comment_column:start                           
+//                                                                             
 //  returns 0 on success                                                       
 //  returns 1 on failure                                                       
 //                                                                             
@@ -41,7 +43,7 @@ int main
         }
         else
         {
-            // DEFERRED BUG output file/no file 
+            // DEFERRED BUG output file/no file
         }
     }
     catch (const std::exception &e)
