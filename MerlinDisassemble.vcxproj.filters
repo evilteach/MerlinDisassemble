@@ -27,6 +27,7 @@
     <None Include="test_data\test_rectangle.gcode">
       <Filter>test_data</Filter>
     </None>
+    <None Include="makefile" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="test_data">
