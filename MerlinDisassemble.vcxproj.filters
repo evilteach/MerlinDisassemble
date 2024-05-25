@@ -28,6 +28,7 @@
       <Filter>test_data</Filter>
     </None>
     <None Include="makefile" />
+    <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="test_data">
@@ -38,6 +39,5 @@
     <Text Include="test_data\small_leveling.log">
       <Filter>test_data</Filter>
     </Text>
-    <Text Include="jan.txt" />
   </ItemGroup>
 </Project>

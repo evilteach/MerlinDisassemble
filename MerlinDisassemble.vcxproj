@@ -137,6 +137,7 @@
     <ClInclude Include="MerlinDisassemble.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitignore" />
     <None Include="LICENSE" />
     <None Include="makefile" />
     <None Include="README.md" />
@@ -148,7 +149,6 @@
     <None Include="test_data\test_rectangle.gcode" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="jan.txt" />
     <Text Include="test_data\small_leveling.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
