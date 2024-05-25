@@ -1,3 +1,28 @@
+//
+//  MerlinDisassemble.cpp
+//
+// MIT License
+// 
+// Copyright (c) 2024 EvilTeach
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -33,36 +58,31 @@ int main
 {
     int returnStatus = 0;
 
+    MerlinDisassemble merlinDisassemble;
+
     try
     {
-        MerlinDisassemble merlinDisassemble;
-
-        bool showLineNumbers = false;
-        int commentColumn    = 100;
-
         int firstArgument = 0;
 
         std::size_t z = 1;
-        for (; z < (std::size_t) argC; z++)
+        for (; z <= (std::size_t) argC; z++)
         {
             if (argV[z][0] == '-')
             {
-                std::cout << "argV[" << z << "] is " << argV[z] << std::endl;
+                firstArgument = (int) z + 1;
                 std::string argument = argV[z];
                 trim(argument);
                 uppercase(argument);
 
                 if (argument.substr(0, 2) == "-L")
                 {
-                    showLineNumbers = true;
-                    firstArgument = (int) z + 1;
+                    merlinDisassemble.show_line_numbers();
                 }
                 else
                 {
                     if (argument.substr(0, 3) == "-C:")
                     {
-                        commentColumn = std::stoi(argument.substr(3));
-                        firstArgument = (int) z + 1;
+                        merlinDisassemble.set_comment_column(std::stoi(argument.substr(3)));
                     }
                     else
                     {
@@ -82,11 +102,15 @@ int main
             }
             else
             {
+                // Command line switches must be on the front.
+                // In this case there aren't any more.
+
+                break;
             }
         }
 
-        int argumentCount = argC - firstArgument - 1;
 
+        int argumentCount = argC - firstArgument;
         if (argumentCount == 0)
         {
             // MerlinDisassemble
@@ -101,7 +125,7 @@ int main
             {
                 // MerlinDisassemble input.txt
 
-                std::ifstream in (argV[firstArgument + 1]);
+                std::ifstream in (argV[firstArgument + 0]);
                 std::ostream &out = std::cout;
                 returnStatus = merlinDisassemble.process(in, out);
             }
@@ -111,8 +135,8 @@ int main
                 {
                     // MerlinDisassemble input.txt output.txt
 
-                    std::ifstream in (argV[firstArgument + 1]);
-                    std::ofstream out (argV[firstArgument + 2]);
+                    std::ifstream in (argV[firstArgument  + 0]);
+                    std::ofstream out (argV[firstArgument + 1], std::ofstream::out);
                     returnStatus = merlinDisassemble.process(in, out);
                 }
                 else

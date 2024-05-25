@@ -1,3 +1,27 @@
+//
+//  MerlinDisassemble.hpp
+//
+// MIT License
+// 
+// Copyright (c) 2024 EvilTeach
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 void uppercase
 (
@@ -49,7 +73,7 @@ namespace MerlinDisassembleNamespace
         ,"M221,SET FLOW RATE %,         SFlow%, TExtruder"
         ,"T0,  SELECT/REPORT TOOL"
 
-        // DEFFERED BUG more G/M codes as needed.
+        // DEFERRED BUG more G/M codes as needed.
     };
 
     std::size_t merlinCodesCount = sizeof(merlinCodes) / sizeof(merlinCodes[0]);
@@ -72,6 +96,22 @@ namespace MerlinDisassembleNamespace
             {
             }
 
+            void show_line_numbers
+            (
+                void
+            )
+            {
+                showLineNumbers = 1;
+            }
+
+            void set_comment_column
+            (
+                int iCommentColumn
+            )
+            {
+                commentColumn = iCommentColumn;
+            }
+
             int process
             (
                 std::istream &in,
@@ -91,16 +131,26 @@ namespace MerlinDisassembleNamespace
 
                 while(std::getline(in, line))
                 {
-                    lineNumber++;
                     std::ostringstream oss;
-                    oss << std::setw(6) << lineNumber << " ";
+
+                    if (showLineNumbers)
+                    {
+                        lineNumber++;
+                        oss << std::setw(6) << lineNumber << " ";
+                    }
+                    else
+                    {
+                        // Do not show line numbers.
+                    }
 
                     {
                         trim(line);
                     }
 
                     {
-                        // Maybe this is a log file instead of a gcode file.
+                        // Maybe this is a Repetier log file.
+                        // If so pull the background noise out of it
+                        // so all we are left with is the G/M codes.
                         if
                         (
                             isdigit(line[0]) &&
@@ -210,6 +260,7 @@ namespace MerlinDisassembleNamespace
                     else
                     {
                         // Attempt to display the line in a more human readable form.
+                        // Note in this implementation we are forcing the arguments into a fixed order.
                         std::istringstream merlinCodeStream (merlinCodes[z]);
                         std::getline(merlinCodeStream, command, ',');
                         oss << std::left << std::setw(5) << command;
@@ -296,24 +347,34 @@ namespace MerlinDisassembleNamespace
                         }
                     }
 
-                    size_t commentColumn = 100;
                     size_t ossSize = oss.str().size();
 
-                    if (commentColumn < ossSize)
+                    if (commentColumn > 0)
                     {
+                        if (commentColumn < (int) ossSize)
+                        {
+                        }
+                        else
+                        {
+                            std::string rightFill (commentColumn - oss.str().size(), ' ');
+                            oss << rightFill;
+                        }
+
+                        oss << comment;
                     }
                     else
                     {
-                        std::string rightFill (commentColumn - oss.str().size(), ' ');
-                        oss << rightFill;
                     }
-
-                    oss << comment;
 
                     out << oss.str() << std::endl;
                 }
 
                 return returnStatus;
             }
+
+        protected :
+
+            int showLineNumbers = 0;
+            int commentColumn   = 100;
     };
 }
