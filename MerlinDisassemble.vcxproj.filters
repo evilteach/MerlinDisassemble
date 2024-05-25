@@ -38,5 +38,6 @@
     <Text Include="test_data\small_leveling.log">
       <Filter>test_data</Filter>
     </Text>
+    <Text Include="jan.txt" />
   </ItemGroup>
 </Project>

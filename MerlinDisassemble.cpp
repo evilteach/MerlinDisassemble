@@ -43,6 +43,18 @@ int main
         }
         else
         {
+            if (argC == 3)
+            {
+                // MerlinDisassemble input.txt
+
+                std::ifstream in (argV[1]);
+                std::ofstream out (argV[2]);
+                returnStatus = merlinDisassemble.process(in, out);
+            }
+            else
+            {
+            }
+
             // DEFERRED BUG output file/no file
         }
     }

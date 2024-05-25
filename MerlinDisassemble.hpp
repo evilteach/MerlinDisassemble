@@ -4,6 +4,8 @@ namespace MerlinDisassembleNamespace
     {
          "G0,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
         ,"G1,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
+        ,"G2,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FsPEED, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
+        ,"G3,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FsPEED, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
         ,"M20, LIST SD CARD,            FBin Files, LLong File Name, TTimestamp"
         ,"G28, AUTO HOME,               LRestore Leveling State, OSkip Homing, RRaise Nozzle, XX Axis, YY Axis, ZZ Axis"
         ,"M80, POWER ON,                SReport Power Supply State"
@@ -12,7 +14,7 @@ namespace MerlinDisassembleNamespace
         ,"G92, SET POSITION,            XX, YY, ZZ, EE"
         ,"M82, E ABSOLUTE"
         ,"M84, DISABLE STEPPERS,        SSeconds, XX Axis,YY Axis, ZZ Axis, EExtruder, AA Axis, BB Axis, CC Axis, UU Axis, VV Axis, WW Axis"
-        ,"M104,START HOTEND TEMP,       BMaxAutoTemp, FAutoTemp Flag, IMaterial Preset Index, STemp, THotend"
+        ,"M104,START HOTEND TEMP,       BMaxAutoTemp, FAutoTemp Flag, IMaterial Preset Index, STemp, THotEnd"
         ,"M105,REPORT TEMP,             RRedundant Temp, THotEnd"
         ,"M106,SET FAN SPEED,           IMaterial preset, PFan, SSpeed, TSecondary Speed"
         ,"M107,FAN OFF,                 PIndex"
@@ -244,6 +246,7 @@ namespace MerlinDisassembleNamespace
                                         if (showActualExtrusion && referenceArgumentType == "E")
                                         {
                                             // Show E value with calculated extrusion
+                                            // BUG force .5 digits on it.
                                             double extrusionAmount = atof(actualArgumentValue.c_str()) - lastExtrusion;
                                             lastExtrusion = atof(actualArgumentValue.c_str());
 
