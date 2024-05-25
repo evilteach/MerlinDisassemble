@@ -1,3 +1,21 @@
+
+void uppercase
+(
+    std::string &value
+)
+{
+    for (auto &c: value) c = (char) toupper(c);
+}
+
+void trim
+(
+    std::string &line
+)
+{
+    line.erase(line.find_last_not_of("\n\r ") + 1);
+    line.erase(0, line.find_first_not_of("\n\r "));
+}
+
 namespace MerlinDisassembleNamespace
 {
     const std::string merlinCodes[] =
@@ -296,25 +314,6 @@ namespace MerlinDisassembleNamespace
                 }
 
                 return returnStatus;
-            }
-
-        protected :
-
-            void trim
-            (
-                std::string &line
-            )
-            {
-                line.erase(line.find_last_not_of("\n\r ") + 1);
-                line.erase(0, line.find_first_not_of("\n\r "));
-            }
-
-            void uppercase
-            (
-                std::string &value
-            )
-            {
-                for (auto &c: value) c = (char) toupper(c);
             }
     };
 }
