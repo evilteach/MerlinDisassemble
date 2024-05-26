@@ -1,13 +1,13 @@
 
-
-#include <iostream>
+#include "MiniCppUnit.hxx"
+#include "UnitTest.hpp"
 
 int main
 (
     void
 )
 {
-    // TODO which unit test framework to use?
+    return TestFixtureFactory::theInstance().runTests() ? 0 : -1;
 
     return 0;
 }
