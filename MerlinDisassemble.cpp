@@ -62,7 +62,7 @@ int main
 
     try
     {
-        int firstArgument = 0;
+        int firstArgument = 1;
 
         std::size_t z = 1;
         for (; z <= (std::size_t) argC; z++)
@@ -127,6 +127,7 @@ int main
 
                 std::ifstream in (argV[firstArgument + 0]);
                 std::ostream &out = std::cout;
+
                 returnStatus = merlinDisassemble.process(in, out);
             }
             else

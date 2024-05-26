@@ -1,0 +1,641 @@
+11:48:55.877 : OpenGL version:4.6.13596 Compatibility Profile Context 20.10.35.02 27.20.1034.6
+11:48:55.878 : OpenGL extensions:GL_AMDX_debug_output GL_AMD_blend_minmax_factor GL_AMD_conservative_depth GL_AMD_debug_output GL_AMD_depth_clamp_separate GL_AMD_draw_buffers_blend GL_AMD_framebuffer_sample_positions GL_AMD_gcn_shader GL_AMD_gpu_shader_half_float GL_AMD_gpu_shader_int16 GL_AMD_gpu_shader_int64 GL_AMD_interleaved_elements GL_AMD_multi_draw_indirect GL_AMD_name_gen_delete GL_AMD_occlusion_query_event GL_AMD_performance_monitor GL_AMD_pinned_memory GL_AMD_query_buffer_object GL_AMD_sample_positions GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_atomic_counter_ops GL_AMD_shader_stencil_export GL_AMD_shader_stencil_value_export GL_AMD_shader_trace GL_AMD_shader_trinary_minmax GL_AMD_sparse_texture GL_AMD_sparse_texture_pool GL_AMD_stencil_operation_extended GL_AMD_texture_cube_map_array GL_AMD_texture_texture4 GL_AMD_transform_feedback3_lines_triangles GL_AMD_transform_feedback4 GL_AMD_vertex_shader_layer GL_AMD_vertex_shader_viewport_index GL_ARB_ES2_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_compressed_texture_pixel_storage GL_ARB_compute_shader GL_ARB_conditional_render_inverted GL_ARB_conservative_depth GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_depth_texture GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_draw_indirect GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_query_buffer_object GL_ARB_robust_buffer_access_behavior GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counter_ops GL_ARB_shader_atomic_counters GL_ARB_shader_ballot GL_ARB_shader_bit_encoding GL_ARB_shader_draw_parameters GL_ARB_shader_group_vote GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_precision GL_ARB_shader_stencil_export GL_ARB_shader_storage_buffer_object GL_ARB_shader_subroutine GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shader_viewport_layer_array GL_ARB_shading_language_100 GL_ARB_shading_language_420pack GL_ARB_shading_language_packing GL_ARB_shadow GL_ARB_shadow_ambient GL_ARB_sparse_buffer GL_ARB_sparse_texture GL_ARB_spirv_extensions GL_ARB_stencil_texturing GL_ARB_sync GL_ARB_tessellation_shader GL_ARB_texture_barrier GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_cube_map_array GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_mirrored_repeat GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_snorm GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_transpose_matrix GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_viewport_array GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_envmap_bumpmap GL_ATI_fragment_shader GL_ATI_separate_stencil GL_ATI_texture_compression_3dc GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_ATI_texture_mirror_once GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_copy_buffer GL_EXT_copy_texture GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_histogram GL_EXT_memory_object GL_EXT_memory_object_win32 GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_semaphore GL_EXT_semaphore_win32 GL_EXT_separate_specular_color GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_EXT_subtexture GL_EXT_texgen_reflection GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_bptc GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_add GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_EXT_texture_sRGB_decode GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_storage GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_IBM_texture_mirrored_repeat GL_KHR_context_flush_control GL_KHR_debug GL_KHR_no_error GL_KHR_parallel_shader_compile GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KTX_buffer_region GL_NV_alpha_to_coverage_dither_control GL_NV_blend_square GL_NV_conditional_render GL_NV_copy_depth_to_color GL_NV_copy_image GL_NV_depth_buffer_float GL_NV_explicit_multisample GL_NV_float_buffer GL_NV_half_float GL_NV_primitive_restart GL_NV_shader_atomic_int64 GL_NV_texgen_reflection GL_NV_texture_barrier GL_OES_EGL_image GL_SGIS_generate_mipmap GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_SUN_multi_draw_arrays GL_WIN_swap_hint WGL_EXT_swap_control
+11:48:55.879 : OpenGL renderer:Radeon RX550/550 Series
+11:48:55.879 : Using fast VBOs for rendering is possible
+11:48:57.146 : Printer reset detected - initializing
+11:48:57.189 : start
+11:48:57.189 : echo:Marlin 1.1.9.1
+11:48:57.189 : echo: Last Updated: 2020-06-20 | Author: (none, default config)
+11:48:57.189 : echo:Compiled: May 11 2024
+11:48:57.189 : echo: Free Memory: 4777  PlannerBufferBytes: 1232
+11:48:57.189 : echo:V56 stored settings retrieved (656 bytes; crc 29670)
+11:48:57.189 : echo:  G21    ; (mm)
+11:48:57.189 : echo:  M149 C ; Units in Celsius
+11:48:57.189 : echo:Filament settings: Disabled
+11:48:57.189 : echo:  M200 D0.00
+11:48:57.189 : echo:  M200 D0
+11:48:57.189 : echo:Steps per unit:
+11:48:57.190 : echo:  M92 X79.50 Y80.00 Z415.51 E450.00
+11:48:57.190 : echo:Maximum feedrates (units/s):
+11:48:57.190 : echo:  M203 X300.00 Y300.00 Z5.00 E25.00
+11:48:57.190 : echo:Maximum Acceleration (units/s2):
+11:48:57.190 : echo:  M201 X3000 Y3000 Z100 E10000
+11:48:57.190 : echo:Acceleration (units/s2): P<print_accel> R<retract_accel> T<travel_accel>
+11:48:57.190 : echo:  M204 P3000.00 R3000.00 T3000.00
+11:48:57.190 : echo:Advanced: Q<min_segment_time_us> S<min_feedrate> T<min_travel_feedrate> X<max_x_jerk> Y<max_y_jerk> Z<max_z_jerk> E<max_e_jerk>
+11:48:57.190 : echo:  M205 Q20000 S0.00 T0.00 X10.00 Y10.00 Z0.30 E5.00
+11:48:57.190 : echo:Home offset:
+11:48:57.190 : echo:  M206 X0.00 Y0.00 Z0.00
+11:48:57.190 : echo:Material heatup parameters:
+11:48:57.190 : echo:  M145 S0 H205 B65 F0
+11:48:57.190 : echo:  M145 S1 H230 B110 F0
+11:48:57.190 : echo:PID settings:
+11:48:57.190 : echo:  M301 P22.13 I1.66 D73.86
+11:48:57.192 : echo:  M304 P148.93 I23.01 D240.96
+11:48:57.341 : N1 M110*34
+11:48:57.341 : N2 M115*36
+11:48:57.341 : N3 M105*36
+11:48:57.341 : N4 M114*35
+11:48:57.341 : N5 M111 S6*98
+11:48:57.353 : N6 T0*60
+11:48:57.356 : N7 M80*28
+11:48:57.356 : N8 M105*47
+11:49:00.186 : N9 M220 S100*104
+11:49:00.186 : N10 M221 S100*81
+11:49:00.403 : FIRMWARE_NAME:Marlin 1.1.9.1 (Github) SOURCE_CODE_URL:https://github.com/MarlinFirmware/Marlin PROTOCOL_VERSION:1.0 MACHINE_TYPE:Shared Jan 1.6 EXTRUDER_COUNT:1 UUID:cede2a2f-41a2-4748-9b12-c55c62f367ff
+11:49:00.403 : Cap:SERIAL_XON_XOFF:0
+11:49:00.410 : Cap:EEPROM:1
+11:49:00.410 : Cap:VOLUMETRIC:1
+11:49:00.410 : Cap:AUTOREPORT_TEMP:1
+11:49:00.410 : Cap:PROGRESS:0
+11:49:00.410 : Cap:PRINT_JOB:1
+11:49:00.410 : Cap:AUTOLEVEL:0
+11:49:00.410 : Cap:Z_PROBE:0
+11:49:00.410 : Cap:LEVELING_DATA:0
+11:49:00.410 : Cap:BUILD_PERCENT:0
+11:49:00.410 : Cap:SOFTWARE_POWER:0
+11:49:00.410 : Cap:TOGGLE_LIGHTS:0
+11:49:00.410 : Cap:CASE_LIGHT_BRIGHTNESS:0
+11:49:00.410 : Cap:EMERGENCY_PARSER:0
+11:49:00.410 : Cap:AUTOREPORT_SD_STATUS:0
+11:49:00.410 : Cap:THERMAL_PROTECTION:1
+11:49:00.410 : N11 M111 S6*87
+11:49:00.479 : X:0.00 Y:0.00 Z:0.00 E:0.00 Count X:0 Y:0 Z:0
+11:49:00.479 : echo:DEBUG:INFO,ERRORS
+11:49:00.480 : echo:Active Extruder: 0
+11:49:00.480 : echo:Unknown command: "M80"
+11:49:00.480 : N12 T0*9
+11:49:00.480 : N13 M105*21
+11:49:00.480 : N14 M155 S1*85
+11:49:00.480 : echo:DEBUG:INFO,ERRORS
+11:49:00.482 : echo:Active Extruder: 0
+11:49:02.614 : Starting object analyser ...
+11:49:02.617 : Object is manifold.
+11:49:02.618 : Analysing finished.
+11:49:06.708 : N15 M104 T0 S200*23
+11:49:07.345 : N16 M140 S57*96
+11:49:08.170 : N17 M106 P0 S255*19
+11:49:15.382 : CuraEngine command:C:\Software\Repetier-Host\plugins\CuraEngine\CuraEngine.exe -p -v -c "C:\Users\jslater\AppData\Local\RepetierHost\cura.ini" -s posx=0 -s posy=0 -o "C:\Users\jslater\AppData\Local\RepetierHost\composition.gcode" "C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl"
+11:49:15.388 : Preferred name from TestExtrusion to TestExtrusion
+11:49:15.409 : <CuraEngine> Cura_SteamEngine version 15.01
+11:49:15.409 : <CuraEngine> Copyright (C) 2014 David Braam
+11:49:15.410 : <CuraEngine> This program is free software: you can redistribute it and/or modify
+11:49:15.410 : <CuraEngine> it under the terms of the GNU Affero General Public License as published by
+11:49:15.410 : <CuraEngine> the Free Software Foundation, either version 3 of the License, or
+11:49:15.410 : <CuraEngine> (at your option) any later version.
+11:49:15.410 : <CuraEngine> This program is distributed in the hope that it will be useful,
+11:49:15.410 : <CuraEngine> but WITHOUT ANY WARRANTY; without even the implied warranty of
+11:49:15.410 : <CuraEngine> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+11:49:15.410 : <CuraEngine> GNU Affero General Public License for more details.
+11:49:15.410 : <CuraEngine> You should have received a copy of the GNU Affero General Public License
+11:49:15.410 : <CuraEngine> along with this program.  If not, see <http://www.gnu.org/licenses/>.
+11:49:15.410 : <CuraEngine> Default config 'default.cfg' not used
+11:49:15.410 : <CuraEngine> Loading C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl from disk...
+11:49:15.410 : <CuraEngine> Loaded from disk in 0.000s
+11:49:15.410 : <CuraEngine> Analyzing and optimizing model...
+11:49:15.410 : <CuraEngine>   Face counts: 32 -> 32 100.0%
+11:49:15.410 : <CuraEngine>   Vertex counts: 96 -> 16 16.7%
+11:49:15.410 : <CuraEngine>   Size: 56.000000 8.000000 4.000000
+11:49:15.410 : <CuraEngine>   vMin: 122.000000 146.000000 0.000000
+11:49:15.410 : <CuraEngine>   vMax: 178.000000 154.000000 4.000000
+11:49:15.410 : <CuraEngine>   vMin: 122.000000 146.000000 0.000000
+11:49:15.410 : <CuraEngine>   vMax: 178.000000 154.000000 4.000000
+11:49:15.410 : <CuraEngine>   Matrix: 1.000000 0.000000 0.000000
+11:49:15.410 : <CuraEngine>   Matrix: 0.000000 1.000000 0.000000
+11:49:15.410 : <CuraEngine>   Matrix: 0.000000 0.000000 1.000000
+11:49:15.410 : <CuraEngine> Optimize model 0.000s 
+11:49:15.410 : <CuraEngine> Slicing model...
+11:49:15.410 : <CuraEngine> Layer count: 20
+11:49:15.410 : <CuraEngine> Sliced model in 0.000s
+11:49:15.410 : <CuraEngine> Generating support map...
+11:49:15.410 : <CuraEngine> Generating layer parts...
+11:49:15.410 : <CuraEngine> Generated layer parts in 0.000s
+11:49:15.417 : <CuraEngine> Generated inset in 0.016s
+11:49:15.424 : <CuraEngine> Generated up/down skin in 0.000s
+11:49:15.434 : <CuraEngine> Wrote layers in  0.00s.
+11:49:15.434 : <CuraEngine> Wrote  15.4 kilobytes.
+11:49:15.436 : <CuraEngine> Total time elapsed  0.02s.
+11:49:15.436 : <CuraEngine> Print time: 133
+11:49:15.436 : <CuraEngine> Filament: 171
+11:49:15.436 : <CuraEngine> Filament2: 0
+11:49:17.746 : N18 M117 ********** PLA Start Code Begins*57
+11:49:17.748 : N19 M104 S207*88
+11:49:17.750 : N20 M140 S57*101
+11:49:17.750 : N21 M106 S256*85
+11:49:17.753 : N22 G28*35
+11:49:17.754 : N23 G1 E4*72
+11:49:17.761 : N24 G4 P250*92
+11:49:17.761 : N25 G1 Z5 F200*4
+11:49:17.762 : N26 G1  E4*109
+11:49:17.762 : N27 G4 P250*95
+11:49:17.763 : N28 G0 X10 Y10 Z0.2*68
+11:50:02.677 : X:0.00 Y:0.00 Z:0.00 E:0.00 Count X:0 Y:0 Z:0
+11:50:02.677 : N29 G1 E8*78
+11:50:02.679 : N30 G4 P250*89
+11:50:03.209 : N31 G1 X250 E6 F8000*104
+11:50:03.209 : N32 G1 E8*68
+11:50:03.209 : N33 G4 P250*90
+11:50:05.088 : N34 G90*39
+11:50:05.089 : N35 M82*47
+11:50:05.093 : N36 M190 S57*111
+11:50:11.127 : N37 M109 S207*89
+11:50:11.129 : N38 G92 E0*124
+11:50:11.131 : N39 M106 S256*92
+11:50:13.416 : N40 M117 ********** PLA Start Code ends*28
+11:50:13.417 : N41 M107*16
+11:50:23.433 : X:250.00 Y:10.00 Z:0.20 E:0.00 Count X:19875 Y:800 Z:83
+11:50:23.435 : N42 G0 X118.82 Y142.82 Z0.2 F9000*40
+11:50:23.436 : Printing layer 1 of 20
+11:50:23.441 : N43 G1 F1800 X181.180 Y142.820 E1.86669*48
+11:50:23.441 : N44 G1 X181.180 Y157.180 E2.29655*86
+11:50:23.449 : N45 G1 X118.820 Y157.180 E4.16324*93
+11:50:23.452 : N46 G1 X118.820 Y142.820 E4.59309*93
+11:50:23.459 : N47 G1 F2400 E0.59309*54
+11:50:23.476 : N48 G0 X122.18 Y146.18 F9000*121
+11:50:23.481 : N49 G1 F2400 E4.59309*60
+11:50:23.482 : N50 G1 F1800 X177.820 Y146.180 E6.25863*53
+11:50:23.490 : N51 G1 X177.820 Y153.820 E6.48732*92
+11:50:23.495 : N52 G1 X122.180 Y153.820 E8.15286*80
+11:50:23.502 : N53 G1 X122.180 Y146.180 E8.38155*84
+11:50:23.509 : N54 G0 X122.62 Y146.62 F9000*116
+11:50:23.520 : N55 G1 F1800 X122.620 Y153.379 E8.58388*52
+11:50:23.525 : N56 G1 X177.379 Y153.379 E10.22304*97
+11:50:23.531 : N57 G1 X177.379 Y146.620 E10.42537*109
+11:50:23.563 : N58 G1 X122.620 Y146.620 E12.06453*106
+11:50:23.595 : N59 G0 X122.494 Y146.677 F9000*118
+11:50:24.758 : N60 G1 F1800 X122.469 Y146.397 E12.07245*8
+11:50:26.847 : N61 G1 X122.980 Y146.399 E12.08031*108
+11:50:27.331 : N62 G1 X123.489 Y146.399 E12.08819*104
+11:50:29.420 : N63 G1 X123.998 Y146.399 E12.09606*101
+11:50:29.905 : N64 G1 X124.507 Y146.399 E12.10393*110
+11:50:30.068 : N65 G1 X125.016 Y146.399 E12.11180*106
+11:50:30.165 : N66 G1 X125.525 Y146.399 E12.11972*105
+11:50:30.305 : N67 G1 X126.034 Y146.399 E12.12763*99
+11:50:32.171 : N68 G1 X126.544 Y146.399 E12.13556*107
+11:50:32.430 : N69 G1 X127.053 Y146.399 E12.14343*109
+11:50:34.292 : N70 G1 X127.562 Y146.399 E12.15131*100
+11:50:34.553 : N71 G1 X128.071 Y146.399 E12.15918*110
+11:50:34.574 : N72 G1 X128.580 Y146.399 E12.16705*103
+11:50:34.802 : N73 G1 X129.089 Y146.399 E12.17492*103
+11:50:36.635 : N74 G1 X129.598 Y146.399 E12.18284*107
+11:50:36.864 : N75 G1 X130.107 Y146.399 E12.19075*109
+11:50:38.696 : N76 G1 X130.616 Y146.399 E12.19867*98
+11:50:38.705 : N77 G1 X131.126 Y146.399 E12.20660*101
+11:50:38.719 : N78 G1 X131.635 Y146.399 E12.21447*105
+11:50:38.739 : N79 G1 X132.144 Y146.399 E12.22234*107
+11:50:38.757 : N80 G1 X132.653 Y146.399 E12.23021*107
+11:50:38.781 : N81 G1 X133.162 Y146.399 E12.23808*109
+11:50:38.790 : N82 G1 X133.671 Y146.399 E12.24596*102
+11:50:38.807 : N83 G1 X134.180 Y146.399 E12.25387*110
+11:50:38.824 : N84 G1 X134.689 Y146.399 E12.26179*103
+11:50:38.842 : N85 G1 X135.199 Y146.399 E12.26972*98
+11:50:38.859 : N86 G1 X135.708 Y146.399 E12.27759*105
+11:50:38.880 : N87 G1 X136.217 Y146.399 E12.28546*99
+11:50:38.892 : N88 G1 X136.726 Y146.399 E12.29333*110
+11:50:38.910 : N89 G1 X137.235 Y146.399 E12.30120*97
+11:50:38.926 : N90 G1 X137.744 Y146.399 E12.30908*104
+11:50:38.944 : N91 G1 X138.253 Y146.399 E12.31699*99
+11:50:38.961 : N92 G1 X138.762 Y146.399 E12.32491*110
+11:50:38.980 : N93 G1 X139.271 Y146.399 E12.33282*108
+11:50:38.997 : N94 G1 X139.781 Y146.399 E12.34075*108
+11:50:39.013 : N95 G1 X140.290 Y146.399 E12.34862*104
+11:50:39.030 : N96 G1 X140.799 Y146.399 E12.35649*97
+11:50:39.046 : N97 G1 X141.308 Y146.399 E12.36437*101
+11:50:39.063 : N98 G1 X141.817 Y146.399 E12.37224*106
+11:50:39.080 : N99 G1 X142.326 Y146.399 E12.38011*106
+11:50:39.111 : N100 G1 X142.835 Y146.399 E12.38803*89
+11:50:39.114 : N101 G1 X143.344 Y146.399 E12.39594*86
+11:50:39.131 : N102 G1 X143.854 Y146.399 E12.40387*85
+11:50:39.148 : N103 G1 X144.363 Y146.399 E12.41174*83
+11:50:39.165 : N104 G1 X144.872 Y146.399 E12.41961*83
+11:50:39.191 : N105 G1 X145.381 Y146.399 E12.42749*83
+11:50:39.209 : N106 G1 X145.890 Y146.399 E12.43536*80
+11:50:39.216 : N107 G1 X146.399 Y146.399 E12.44323*85
+11:50:39.233 : N108 G1 X146.908 Y146.399 E12.45110*91
+11:50:39.250 : N109 G1 X147.417 Y146.399 E12.45902*83
+11:50:39.268 : N110 G1 X147.926 Y146.399 E12.46693*80
+11:50:39.285 : N111 G1 X148.436 Y146.399 E12.47486*85
+11:50:39.302 : N112 G1 X148.945 Y146.399 E12.48273*92
+11:50:39.326 : N113 G1 X149.454 Y146.399 E12.49061*81
+11:50:39.336 : N114 G1 X149.963 Y146.399 E12.49848*92
+11:50:39.352 : N115 G1 X150.472 Y146.399 E12.50635*84
+11:50:39.370 : N116 G1 X150.981 Y146.399 E12.51422*83
+11:50:39.386 : N117 G1 X151.490 Y146.399 E12.52214*94
+11:50:39.404 : N118 G1 X151.999 Y146.399 E12.53005*86
+11:50:39.442 : N119 G1 X152.509 Y146.399 E12.53798*82
+11:50:39.443 : N120 G1 X153.018 Y146.399 E12.54585*85
+11:50:39.454 : N121 G1 X153.527 Y146.399 E12.55373*83
+11:50:39.471 : N122 G1 X154.036 Y146.399 E12.56160*81
+11:50:39.489 : N123 G1 X154.545 Y146.399 E12.56947*92
+11:50:39.505 : N124 G1 X155.054 Y146.399 E12.57734*84
+11:50:39.525 : N125 G1 X155.563 Y146.399 E12.58521*93
+11:50:39.540 : N126 G1 X156.072 Y146.399 E12.59313*94
+11:50:39.556 : N127 G1 X156.581 Y146.399 E12.60104*88
+11:50:39.584 : N128 G1 X157.091 Y146.399 E12.60897*81
+11:50:39.606 : N129 G1 X157.600 Y146.399 E12.61685*82
+11:50:39.709 : N130 G1 X158.109 Y146.399 E12.62472*82
+11:50:39.709 : N131 M117 *********************** KILL BEGINS*59
+11:50:39.710 : N132 G1 X0 Y280 Z130*107
+11:50:39.719 : N133 M107*36
+11:50:39.719 : N134 G91*23
+11:50:39.724 : N135 G1 E-1*86
+11:50:39.724 : N136 G90*20
+11:50:39.726 : N137 G92 E0*66
+11:50:39.726 : N138 M84*21
+11:50:39.739 : N139 M117 *********************** KILL ENDS*59
+11:50:39.785 : X:0.00 Y:280.00 Z:130.00 E:0.00 Count X:12271 Y:11712 Z:83
+11:52:41.523 : N140 M104 T0 S0*36
+11:52:42.672 : N141 M104 T0 S207*32
+11:53:00.884 : CuraEngine command:C:\Software\Repetier-Host\plugins\CuraEngine\CuraEngine.exe -p -v -c "C:\Users\jslater\AppData\Local\RepetierHost\cura.ini" -s posx=0 -s posy=0 -o "C:\Users\jslater\AppData\Local\RepetierHost\composition.gcode" "C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl"
+11:53:00.886 : Preferred name from TestExtrusion to TestExtrusion
+11:53:00.911 : <CuraEngine> Cura_SteamEngine version 15.01
+11:53:00.911 : <CuraEngine> Copyright (C) 2014 David Braam
+11:53:00.911 : <CuraEngine> This program is free software: you can redistribute it and/or modify
+11:53:00.911 : <CuraEngine> it under the terms of the GNU Affero General Public License as published by
+11:53:00.911 : <CuraEngine> the Free Software Foundation, either version 3 of the License, or
+11:53:00.911 : <CuraEngine> (at your option) any later version.
+11:53:00.911 : <CuraEngine> This program is distributed in the hope that it will be useful,
+11:53:00.911 : <CuraEngine> but WITHOUT ANY WARRANTY; without even the implied warranty of
+11:53:00.911 : <CuraEngine> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+11:53:00.911 : <CuraEngine> GNU Affero General Public License for more details.
+11:53:00.911 : <CuraEngine> You should have received a copy of the GNU Affero General Public License
+11:53:00.911 : <CuraEngine> along with this program.  If not, see <http://www.gnu.org/licenses/>.
+11:53:00.911 : <CuraEngine> Default config 'default.cfg' not used
+11:53:00.911 : <CuraEngine> Loading C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl from disk...
+11:53:00.912 : <CuraEngine> Loaded from disk in 0.016s
+11:53:00.912 : <CuraEngine> Analyzing and optimizing model...
+11:53:00.912 : <CuraEngine>   Face counts: 32 -> 32 100.0%
+11:53:00.912 : <CuraEngine>   Vertex counts: 96 -> 16 16.7%
+11:53:00.912 : <CuraEngine>   Size: 56.000000 8.000000 4.000000
+11:53:00.912 : <CuraEngine>   vMin: 122.000000 146.000000 0.000000
+11:53:00.912 : <CuraEngine>   vMax: 178.000000 154.000000 4.000000
+11:53:00.912 : <CuraEngine>   vMin: 122.000000 146.000000 0.000000
+11:53:00.912 : <CuraEngine>   vMax: 178.000000 154.000000 4.000000
+11:53:00.912 : <CuraEngine>   Matrix: 1.000000 0.000000 0.000000
+11:53:00.912 : <CuraEngine>   Matrix: 0.000000 1.000000 0.000000
+11:53:00.912 : <CuraEngine>   Matrix: 0.000000 0.000000 1.000000
+11:53:00.912 : <CuraEngine> Optimize model 0.000s 
+11:53:00.912 : <CuraEngine> Slicing model...
+11:53:00.912 : <CuraEngine> Layer count: 20
+11:53:00.912 : <CuraEngine> Sliced model in 0.000s
+11:53:00.912 : <CuraEngine> Generating support map...
+11:53:00.912 : <CuraEngine> Generating layer parts...
+11:53:00.912 : <CuraEngine> Generated layer parts in 0.000s
+11:53:01.073 : <CuraEngine> Generated inset in 0.000s
+11:53:01.095 : <CuraEngine> Generated up/down skin in 0.000s
+11:53:01.107 : <CuraEngine> Wrote layers in  0.00s.
+11:53:01.107 : <CuraEngine> Wrote   7.4 kilobytes.
+11:53:01.109 : <CuraEngine> Total time elapsed  0.02s.
+11:53:01.109 : <CuraEngine> Print time: 127
+11:53:01.109 : <CuraEngine> Filament: 172
+11:53:01.109 : <CuraEngine> Filament2: 0
+11:53:04.617 : N142 G92 E0*64
+11:53:04.617 : N143 G1 E10 F120*31
+11:53:04.624 : X:0.00 Y:280.00 Z:130.00 E:0.00 Count X:0 Y:22400 Z:54016
+11:55:06.831 : N144 G92 E0*70
+11:55:06.831 : N145 G1 E10 F120*25
+11:55:06.837 : X:0.00 Y:280.00 Z:130.00 E:0.00 Count X:0 Y:22400 Z:54016
+11:55:09.064 : CuraEngine command:C:\Software\Repetier-Host\plugins\CuraEngine\CuraEngine.exe -p -v -c "C:\Users\jslater\AppData\Local\RepetierHost\cura.ini" -s posx=0 -s posy=0 -o "C:\Users\jslater\AppData\Local\RepetierHost\composition.gcode" "C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl"
+11:55:09.066 : Preferred name from TestExtrusion to TestExtrusion
+11:55:09.087 : <CuraEngine> Cura_SteamEngine version 15.01
+11:55:09.087 : <CuraEngine> Copyright (C) 2014 David Braam
+11:55:09.087 : <CuraEngine> This program is free software: you can redistribute it and/or modify
+11:55:09.088 : <CuraEngine> it under the terms of the GNU Affero General Public License as published by
+11:55:09.088 : <CuraEngine> the Free Software Foundation, either version 3 of the License, or
+11:55:09.088 : <CuraEngine> (at your option) any later version.
+11:55:09.088 : <CuraEngine> This program is distributed in the hope that it will be useful,
+11:55:09.088 : <CuraEngine> but WITHOUT ANY WARRANTY; without even the implied warranty of
+11:55:09.088 : <CuraEngine> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+11:55:09.088 : <CuraEngine> GNU Affero General Public License for more details.
+11:55:09.088 : <CuraEngine> You should have received a copy of the GNU Affero General Public License
+11:55:09.088 : <CuraEngine> along with this program.  If not, see <http://www.gnu.org/licenses/>.
+11:55:09.088 : <CuraEngine> Default config 'default.cfg' not used
+11:55:09.088 : <CuraEngine> Loading C:\Users\jslater\AppData\Local\RepetierHost\composition0.stl from disk...
+11:55:09.088 : <CuraEngine> Loaded from disk in 0.000s
+11:55:09.088 : <CuraEngine> Analyzing and optimizing model...
+11:55:09.089 : <CuraEngine>   Face counts: 32 -> 32 100.0%
+11:55:09.089 : <CuraEngine>   Vertex counts: 96 -> 16 16.7%
+11:55:09.089 : <CuraEngine>   Size: 56.000000 8.000000 4.000000
+11:55:09.089 : <CuraEngine>   vMin: 122.000000 146.000000 0.000000
+11:55:09.089 : <CuraEngine>   vMax: 178.000000 154.000000 4.000000
+11:55:09.089 : <CuraEngine>   vMin: 122.000000 146.000000 0.000000
+11:55:09.089 : <CuraEngine>   vMax: 178.000000 154.000000 4.000000
+11:55:09.089 : <CuraEngine>   Matrix: 1.000000 0.000000 0.000000
+11:55:09.089 : <CuraEngine>   Matrix: 0.000000 1.000000 0.000000
+11:55:09.089 : <CuraEngine>   Matrix: 0.000000 0.000000 1.000000
+11:55:09.089 : <CuraEngine> Optimize model 0.000s 
+11:55:09.089 : <CuraEngine> Slicing model...
+11:55:09.089 : <CuraEngine> Layer count: 20
+11:55:09.089 : <CuraEngine> Sliced model in 0.000s
+11:55:09.089 : <CuraEngine> Generating support map...
+11:55:09.089 : <CuraEngine> Generating layer parts...
+11:55:09.089 : <CuraEngine> Generated layer parts in 0.000s
+11:55:09.096 : <CuraEngine> Generated inset in 0.000s
+11:55:09.248 : <CuraEngine> Generated up/down skin in 0.000s
+11:55:09.269 : <CuraEngine> Wrote layers in  0.00s.
+11:55:09.269 : <CuraEngine> Wrote   7.4 kilobytes.
+11:55:09.271 : <CuraEngine> Total time elapsed  0.00s.
+11:55:09.271 : <CuraEngine> Print time: 127
+11:55:09.271 : <CuraEngine> Filament: 172
+11:55:09.271 : <CuraEngine> Filament2: 0
+11:55:15.274 : N146 M117 ETE 2m 27s*122
+11:55:15.275 : N147 M117 ********** PLA Start Code Begins*2
+11:55:15.276 : N148 M104 S207*109
+11:55:15.277 : N149 M140 S57*91
+11:55:15.280 : N150 M106 S256*98
+11:55:15.280 : N151 G28*22
+11:55:15.284 : N152 G1 E8*115
+11:55:15.284 : N153 G4 P250*109
+11:55:15.285 : N154 G1 Z5 F200*51
+11:55:15.285 : N155 G1  E8*84
+11:55:15.285 : N156 G4 P250*104
+11:55:15.285 : N157 G0 X10 Y10 Z0.2*125
+11:55:57.587 : X:0.00 Y:0.00 Z:0.00 E:10.00 Count X:0 Y:0 Z:0
+11:55:57.588 : N158 M117 ETE 2m 16s*119
+11:55:58.955 : N159 M117 ETE 2m 16s*118
+11:55:58.956 : N160 G1 E16*77
+11:56:00.833 : N161 G4 P250*108
+11:56:00.836 : N162 G1 X250 E6 F8000*95
+11:56:00.836 : N163 G1 E16*78
+11:56:00.836 : N164 G4 P250*105
+11:56:00.837 : N165 G90*18
+11:56:00.837 : N166 M82*24
+11:56:00.839 : N167 M190 S57*90
+11:56:08.074 : N168 M117 ETE 2m 12s*112
+11:56:08.075 : N169 M109 S207*99
+11:56:08.077 : N170 G92 E0*65
+11:56:10.684 : N171 M117 ETE 2m 12s*120
+11:56:10.685 : N172 M106 S256*98
+11:56:10.685 : N173 M117 ********** PLA Start Code ends*45
+11:56:16.187 : X:250.00 Y:10.00 Z:0.20 E:0.00 Count X:19875 Y:800 Z:83
+11:56:16.187 : N174 M117 ETE 2m 12s*125
+11:56:16.189 : N175 M107*38
+11:56:16.192 : N176 G0 X118.78 Y142.78 Z0.2 F9000*30
+11:56:16.192 : Printing layer 1 of 20
+11:56:16.192 : N177 G1 F1800 X181.220 Y142.780 E2.28444*0
+11:56:16.195 : N178 G1 X181.220 Y157.220 E2.81274*109
+11:56:16.199 : N179 G1 X118.780 Y157.220 E5.09718*107
+11:56:16.202 : N180 G1 X118.780 Y142.780 E5.62549*109
+11:56:16.206 : N181 G1 F2400 E1.62549*6
+11:56:16.209 : N182 G0 X122.22 Y146.22 F9000*78
+11:56:16.210 : N183 G1 F2400 E5.62549*0
+11:56:16.214 : N184 G1 F1800 X177.780 Y146.220 E7.65821*2
+11:56:16.219 : N185 G1 X177.780 Y153.780 E7.93480*105
+11:56:16.222 : N186 G1 X122.220 Y153.780 E9.96753*99
+11:56:16.226 : N187 G1 X122.220 Y146.220 E10.24412*94
+11:56:16.230 : N188 G0 X122.58 Y146.58 F9000*68
+11:56:16.234 : N189 G1 F1800 X122.580 Y153.419 E10.49433*50
+11:56:16.239 : N190 G1 X177.419 Y153.419 E12.50068*84
+11:56:16.247 : N191 G1 X177.419 Y146.580 E12.75089*88
+11:56:16.264 : N192 G1 X122.580 Y146.580 E14.75724*92
+11:56:16.275 : N193 M106 S127*104
+11:56:17.509 : N194 G0 X122.6 Y146.6 Z0.4 F9000*25
+11:56:19.597 : N195 M117 ETE 1m 56s*113
+11:56:19.598 : Printing layer 2 of 20
+11:56:19.599 : N196 G1 F1980 X122.600 Y153.399 E14.98338*53
+11:56:20.086 : N197 G1 X177.399 Y153.399 E16.80600*82
+11:56:20.086 : N198 G1 X177.399 Y146.600 E17.03214*87
+11:56:22.174 : N199 G1 X122.600 Y146.600 E18.85476*80
+11:56:22.663 : N200 G0 X122.2 Y146.2 F9000*71
+11:56:22.827 : N201 G1 F1980 X177.800 Y146.200 E20.70402*60
+11:56:22.899 : N202 G1 X177.800 Y153.800 E20.95680*84
+11:56:23.067 : N203 G1 X122.200 Y153.800 E22.80606*87
+11:56:24.926 : N204 M117 ETE 1m 48s*117
+11:56:25.184 : N205 G1 X122.200 Y146.200 E23.05884*87
+11:56:25.186 : N206 M106 S255*97
+11:56:27.044 : N207 G0 X122.2 Y146.2 Z0.6 F9000*18
+11:56:27.300 : Printing layer 3 of 20
+11:56:27.303 : N208 G1 F2220 X177.800 Y146.200 E24.90810*50
+11:56:27.323 : N209 G1 X177.800 Y153.800 E25.16088*95
+11:56:27.323 : N210 G1 X122.200 Y153.800 E27.01014*92
+11:56:27.554 : N211 G1 X122.200 Y146.200 E27.26292*90
+11:56:29.384 : N212 M117 ETE 1m 44s*126
+11:56:29.619 : N213 G0 X122.6 Y146.6 F9000*69
+11:56:31.454 : N214 G1 F2220 X122.600 Y153.399 E27.48906*52
+11:56:31.454 : N215 G1 X177.399 Y153.399 E29.31168*84
+11:56:31.534 : N216 G1 X177.399 Y146.600 E29.53781*83
+11:56:31.737 : N217 G1 X122.600 Y146.600 E31.36044*83
+11:56:33.406 : N218 M117 ETE 1m 40s*112
+11:56:33.623 : N219 G0 X122.6 Y146.6 Z0.8 F9000*19
+11:56:35.286 : Printing layer 4 of 20
+11:56:35.287 : N220 G1 F2400 X122.600 Y153.399 E31.58657*58
+11:56:35.287 : N221 G1 X177.399 Y153.399 E33.40919*80
+11:56:35.306 : N222 G1 X177.399 Y146.600 E33.63533*87
+11:56:36.999 : N223 G1 X122.600 Y146.600 E35.45795*95
+11:56:37.237 : N224 G0 X122.2 Y146.2 F9000*65
+11:56:38.929 : N225 M117 ETE 1m 37s*126
+11:56:39.167 : N226 G1 F2400 X177.800 Y146.200 E37.30721*63
+11:56:39.238 : N227 G1 X177.800 Y153.800 E37.55999*94
+11:56:39.258 : N228 G1 X122.200 Y153.800 E39.40926*85
+11:56:40.750 : N229 G1 X122.200 Y146.200 E39.66203*82
+11:56:40.964 : N230 G0 X122.2 Y146.2 Z1 F9000*15
+11:56:42.476 : Printing layer 5 of 20
+11:56:42.477 : N231 G1 F2700 X177.800 Y146.200 E41.51130*58
+11:56:42.688 : N232 G1 X177.800 Y153.800 E41.76407*80
+11:56:42.708 : N233 G1 X122.200 Y153.800 E43.61334*88
+11:56:42.897 : N234 G1 X122.200 Y146.200 E43.86611*90
+11:56:44.388 : N235 M117 ETE 1m 30s*120
+11:56:44.581 : N236 G0 X122.6 Y146.6 F9000*66
+11:56:46.072 : N237 G1 F2700 X122.600 Y153.399 E44.09225*56
+11:56:46.072 : N238 G1 X177.399 Y153.399 E45.91487*95
+11:56:46.144 : N239 G1 X177.399 Y146.600 E46.14101*90
+11:56:46.321 : N240 G1 X122.600 Y146.600 E47.96363*92
+11:56:47.702 : N241 G0 X122.6 Y146.6 Z1.2 F9000*21
+11:56:47.880 : Printing layer 6 of 20
+11:56:47.880 : N242 G1 F2700 X122.600 Y153.399 E48.18976*59
+11:56:49.261 : N243 M117 ETE 1m 27s*127
+11:56:49.281 : N244 G1 X177.399 Y153.399 E50.01239*90
+11:56:50.683 : N245 G1 X177.399 Y146.600 E50.23852*93
+11:56:50.683 : N246 G1 X122.600 Y146.600 E52.06114*85
+11:56:50.881 : N247 G0 X122.2 Y146.2 F9000*68
+11:56:52.284 : N248 G1 F2700 X177.800 Y146.200 E53.91041*60
+11:56:52.482 : N249 G1 X177.800 Y153.800 E54.16319*86
+11:56:52.553 : N250 G1 X122.200 Y153.800 E56.01245*88
+11:56:53.802 : N251 M117 ETE 1m 22s*121
+11:56:53.979 : N252 G1 X122.200 Y146.200 E56.26523*86
+11:56:55.229 : N253 G0 X122.2 Y146.2 Z1.4 F9000*16
+11:56:55.229 : Printing layer 7 of 20
+11:56:55.229 : N254 G1 F2700 X177.800 Y146.200 E58.11449*62
+11:56:55.405 : N255 G1 X177.800 Y153.800 E58.36727*92
+11:56:55.425 : N256 G1 X122.200 Y153.800 E60.21653*90
+11:56:55.584 : N257 G1 X122.200 Y146.200 E60.46931*95
+11:56:56.815 : N258 G0 X122.6 Y146.6 F9000*74
+11:56:56.978 : N259 G1 F2700 X122.600 Y153.399 E60.69544*48
+11:56:58.206 : N260 G1 X177.399 Y153.399 E62.51806*94
+11:56:58.277 : N261 G1 X177.399 Y146.600 E62.74420*81
+11:56:58.436 : N262 G1 X122.600 Y146.600 E64.56682*91
+11:56:59.667 : N263 M117 ETE 1m 15s*124
+11:56:59.827 : N264 G0 X122.6 Y146.6 Z1.6 F9000*22
+11:57:01.057 : Printing layer 8 of 20
+11:57:01.057 : N265 G1 F2700 X122.600 Y153.399 E64.79296*50
+11:57:01.058 : N266 G1 X177.399 Y153.399 E66.61558*89
+11:57:01.081 : N267 G1 X177.399 Y146.600 E66.84172*94
+11:57:02.325 : N268 G1 X122.600 Y146.600 E68.66434*81
+11:57:02.503 : N269 G0 X122.2 Y146.2 F9000*72
+11:57:03.752 : N270 M117 ETE 1m 12s*121
+11:57:03.931 : N271 G1 F2700 X177.800 Y146.200 E70.51360*59
+11:57:04.002 : N272 G1 X177.800 Y153.800 E70.76638*88
+11:57:04.002 : N273 G1 X122.200 Y153.800 E72.61564*93
+11:57:05.250 : N274 G1 X122.200 Y146.200 E72.86842*84
+11:57:05.430 : N275 G0 X122.2 Y146.2 Z1.8 F9000*24
+11:57:06.676 : Printing layer 9 of 20
+11:57:06.676 : N276 G1 F2700 X177.800 Y146.200 E74.71768*54
+11:57:06.853 : N277 G1 X177.800 Y153.800 E74.97046*89
+11:57:06.873 : N278 G1 X122.200 Y153.800 E76.81972*87
+11:57:07.032 : N279 G1 X122.200 Y146.200 E77.07250*92
+11:57:08.263 : N280 G0 X122.6 Y146.6 F9000*79
+11:57:08.423 : N281 G1 F2700 X122.600 Y153.399 E77.29864*56
+11:57:09.654 : N282 M117 ETE 1m 06s*113
+11:57:09.726 : N283 G1 X177.399 Y153.399 E79.12126*85
+11:57:09.885 : N284 G1 X177.399 Y146.600 E79.34739*95
+11:57:09.885 : N285 G1 X122.600 Y146.600 E81.17002*82
+11:57:11.115 : N286 G0 X122.6 Y146.6 Z2 F9000*1
+11:57:11.275 : Printing layer 10 of 20
+11:57:11.275 : N287 G1 F2700 X122.600 Y153.399 E81.39615*62
+11:57:12.513 : N288 G1 X177.399 Y153.399 E83.21877*86
+11:57:12.529 : N289 G1 X177.399 Y146.600 E83.44491*81
+11:57:13.774 : N290 M117 ETE 1m 02s*118
+11:57:13.953 : N291 G1 X122.600 Y146.600 E85.26753*82
+11:57:15.202 : N292 G0 X122.2 Y146.2 F9000*76
+11:57:15.202 : N293 G1 F2700 X177.800 Y146.200 E87.11679*54
+11:57:15.380 : N294 G1 X177.800 Y153.800 E87.36957*90
+11:57:15.450 : N295 G1 X122.200 Y153.800 E89.21884*86
+11:57:16.699 : N296 G1 X122.200 Y146.200 E89.47161*89
+11:57:16.876 : N297 G0 X122.2 Y146.2 Z2.2 F9000*29
+11:57:18.124 : Printing layer 11 of 20
+11:57:18.125 : N298 G1 F2700 X177.800 Y146.200 E91.32088*51
+11:57:18.303 : N299 G1 X177.800 Y153.800 E91.57365*92
+11:57:18.323 : N300 G1 X122.200 Y153.800 E93.42292*88
+11:57:18.481 : N301 G1 X122.200 Y146.200 E93.67569*83
+11:57:19.712 : N302 M117 ETE 54s*3
+11:57:19.712 : N303 G0 X122.6 Y146.6 F9000*69
+11:57:21.104 : N304 G1 F2700 X122.600 Y153.399 E93.90183*60
+11:57:21.104 : N305 G1 X177.399 Y153.399 E95.72445*94
+11:57:21.177 : N306 G1 X177.399 Y146.600 E95.95059*92
+11:57:21.334 : N307 G1 X122.600 Y146.600 E97.77321*90
+11:57:22.565 : N308 G0 X122.6 Y146.6 Z2.4 F9000*28
+11:57:22.724 : Printing layer 12 of 20
+11:57:22.724 : N309 G1 F2700 X122.600 Y153.399 E97.99934*56
+11:57:23.954 : N310 M117 ETE 51s*5
+11:57:23.979 : N311 G1 X177.399 Y153.399 E99.82197*82
+11:57:25.224 : N312 G1 X177.399 Y146.600 E100.04810*105
+11:57:25.224 : N313 G1 X122.600 Y146.600 E101.87072*107
+11:57:25.414 : N314 G0 X122.2 Y146.2 F9000*67
+11:57:26.651 : N315 G1 F2700 X177.800 Y146.200 E103.71999*3
+11:57:26.827 : N316 G1 X177.800 Y153.800 E103.97277*110
+11:57:26.899 : N317 G1 X122.200 Y153.800 E105.82203*100
+11:57:28.147 : N318 G1 X122.200 Y146.200 E106.07481*103
+11:57:28.325 : N319 G0 X122.2 Y146.2 Z2.6 F9000*30
+11:57:29.573 : N320 M117 ETE 45s*3
+11:57:29.751 : Printing layer 13 of 20
+11:57:29.752 : N321 G1 F2700 X177.800 Y146.200 E107.92407*7
+11:57:29.772 : N322 G1 X177.800 Y153.800 E108.17685*99
+11:57:29.772 : N323 G1 X122.200 Y153.800 E110.02611*104
+11:57:29.929 : N324 G1 X122.200 Y146.200 E110.27889*105
+11:57:31.161 : N325 G0 X122.6 Y146.6 F9000*65
+11:57:31.327 : N326 G1 F2700 X122.600 Y153.399 E110.50502*7
+11:57:32.559 : N327 G1 X177.399 Y153.399 E112.32764*100
+11:57:32.622 : N328 G1 X177.399 Y146.600 E112.55378*98
+11:57:32.783 : N329 G1 X122.600 Y146.600 E114.37640*106
+11:57:34.012 : N330 M117 ETE 39s*9
+11:57:34.173 : N331 G0 X122.6 Y146.6 Z2.8 F9000*26
+11:57:35.403 : Printing layer 14 of 20
+11:57:35.404 : N332 G1 F2700 X122.600 Y153.399 E114.60254*1
+11:57:35.405 : N333 G1 X177.399 Y153.399 E116.42516*101
+11:57:35.423 : N334 G1 X177.399 Y146.600 E116.65130*102
+11:57:36.672 : N335 G1 X122.600 Y146.600 E118.47392*102
+11:57:36.850 : N336 G0 X122.2 Y146.2 F9000*67
+11:57:38.098 : N337 G1 F2700 X177.800 Y146.200 E120.32318*6
+11:57:38.276 : N338 G1 X177.800 Y153.800 E120.57596*103
+11:57:38.347 : N339 G1 X122.200 Y153.800 E122.42522*101
+11:57:39.595 : N340 M117 ETE 34s*3
+11:57:39.773 : N341 G1 X122.200 Y146.200 E122.67800*110
+11:57:39.773 : N342 G0 X122.2 Y146.2 Z3 F9000*9
+11:57:41.022 : Printing layer 15 of 20
+11:57:41.022 : N343 G1 F2700 X177.800 Y146.200 E124.52726*14
+11:57:41.199 : N344 G1 X177.800 Y153.800 E124.78004*107
+11:57:41.220 : N345 G1 X122.200 Y153.800 E126.62930*103
+11:57:41.378 : N346 G1 X122.200 Y146.200 E126.88208*110
+11:57:42.609 : N347 G0 X122.6 Y146.6 F9000*69
+11:57:42.782 : N348 G1 F2700 X122.600 Y153.399 E127.10822*0
+11:57:43.999 : N349 M117 ETE 30s*14
+11:57:44.070 : N350 G1 X177.399 Y153.399 E128.93084*111
+11:57:44.230 : N351 G1 X177.399 Y146.600 E129.15697*100
+11:57:44.231 : N352 G1 X122.600 Y146.600 E130.97960*103
+11:57:45.462 : N353 G0 X122.6 Y146.6 Z3.2 F9000*21
+11:57:45.621 : Printing layer 16 of 20
+11:57:45.621 : N354 G1 F2700 X122.600 Y153.399 E131.20573*0
+11:57:46.852 : N355 G1 X177.399 Y153.399 E133.02835*106
+11:57:46.872 : N356 G1 X177.399 Y146.600 E133.25449*106
+11:57:48.120 : N357 G1 X122.600 Y146.600 E135.07711*102
+11:57:48.299 : N358 G0 X122.2 Y146.2 F9000*75
+11:57:49.546 : N359 M117 ETE 24s*10
+11:57:49.724 : N360 G1 F2700 X177.800 Y146.200 E136.92637*1
+11:57:49.796 : N361 G1 X177.800 Y153.800 E137.17915*110
+11:57:49.796 : N362 G1 X122.200 Y153.800 E139.02842*110
+11:57:51.045 : N363 G1 X122.200 Y146.200 E139.28119*110
+11:57:51.222 : N364 G0 X122.2 Y146.2 Z3.4 F9000*23
+11:57:52.470 : Printing layer 17 of 20
+11:57:52.471 : N365 G1 F2700 X177.800 Y146.200 E141.13046*13
+11:57:52.649 : N366 G1 X177.800 Y153.800 E141.38323*106
+11:57:52.671 : N367 G1 X122.200 Y153.800 E143.23250*108
+11:57:52.836 : N368 G1 X122.200 Y146.200 E143.48527*103
+11:57:54.057 : N369 M117 ETE 18s*6
+11:57:54.058 : N370 G0 X122.6 Y146.6 F9000*65
+11:57:55.450 : N371 G1 F2700 X122.600 Y153.399 E143.71141*3
+11:57:55.450 : N372 G1 X177.399 Y153.399 E145.53403*99
+11:57:55.542 : N373 G1 X177.399 Y146.600 E145.76017*101
+11:57:55.679 : N374 G1 X122.600 Y146.600 E147.58279*99
+11:57:56.911 : N375 G0 X122.6 Y146.6 Z3.6 F9000*21
+11:57:57.070 : Printing layer 18 of 20
+11:57:57.071 : N376 G1 F2700 X122.600 Y153.399 E147.80892*9
+11:57:58.301 : N377 G1 X177.399 Y153.399 E149.63155*111
+11:57:58.320 : N378 G1 X177.399 Y146.600 E149.85768*97
+11:57:59.569 : N379 M117 ETE 14s*11
+11:57:59.746 : N380 G1 X122.600 Y146.600 E151.68030*99
+11:58:00.996 : N381 G0 X122.2 Y146.2 F9000*79
+11:58:00.996 : N382 G1 F2700 X177.800 Y146.200 E153.52957*11
+11:58:01.173 : N383 G1 X177.800 Y153.800 E153.78235*96
+11:58:01.244 : N384 G1 X122.200 Y153.800 E155.63161*99
+11:58:02.494 : N385 G1 X122.200 Y146.200 E155.88439*97
+11:58:02.671 : N386 G0 X122.2 Y146.2 Z3.8 F9000*23
+11:58:03.919 : Printing layer 19 of 20
+11:58:03.920 : N387 G1 F2700 X177.800 Y146.200 E157.73365*2
+11:58:04.096 : N388 G1 X177.800 Y153.800 E157.98643*100
+11:58:04.119 : N389 G1 X122.200 Y153.800 E159.83569*96
+11:58:04.275 : N390 M117 ETE 07s*14
+11:58:05.507 : N391 G1 X122.200 Y146.200 E160.08847*111
+11:58:05.507 : N392 G0 X122.6 Y146.6 F9000*77
+11:58:05.666 : N393 G1 F2700 X122.600 Y153.399 E160.31460*12
+11:58:06.900 : N394 G1 X177.399 Y153.399 E162.13722*106
+11:58:06.969 : N395 G1 X177.399 Y146.600 E162.36336*108
+11:58:07.128 : N396 G1 X122.600 Y146.600 E164.18598*98
+11:58:08.359 : N397 G0 X122.6 Y146.6 Z4 F9000*6
+11:58:08.519 : Printing layer 20 of 20
+11:58:08.520 : N398 G1 F2700 X122.600 Y153.399 E164.41212*7
+11:58:09.749 : N399 M117 ETE 03s*3
+11:58:09.770 : N400 G1 X177.399 Y153.399 E166.23474*103
+11:58:11.019 : N401 G1 X177.399 Y146.600 E166.46088*99
+11:58:11.020 : N402 G1 X122.600 Y146.600 E168.28350*101
+11:58:11.197 : N403 G0 X122.2 Y146.2 F9000*66
+11:58:12.444 : N404 G1 F2700 X177.800 Y146.200 E170.13276*14
+11:58:12.622 : N405 G1 X177.800 Y153.800 E170.38554*108
+11:58:12.694 : N406 G1 X122.200 Y153.800 E172.23480*101
+11:58:13.942 : N407 G1 X122.200 Y146.200 E172.48758*97
+11:58:13.942 : N408 M107*41
+11:58:14.120 : N409 G1 F2400 E168.48758*7
+11:58:15.368 : N410 M117 ETE -*88
+11:58:15.547 : N411 G0 X122.2 Y146.2 Z9 F9000*2
+11:58:15.565 : N412 M117 *********************** END BEGINS*114
+11:58:15.566 : N413 G1 X0 Y280 Z130*109
+11:58:15.566 : N414 M107*36
+11:58:15.724 : N415 G91*17
+11:58:15.725 : N416 G1 E-5*86
+11:58:15.725 : N417 G90*18
+11:58:15.726 : N418 G92 E0*74
+11:58:15.726 : N419 M84*19
+11:58:16.955 : Printjob finished at 2024-05-26 11:58
+11:58:16.955 : Printing Time: 3m:1s
+11:58:16.955 : Lines Send: 245
+11:58:17.012 : N420 M117 *********************** END ENDS*123
+11:58:18.346 : X:0.00 Y:280.00 Z:130.00 E:0.00 Count X:9747 Y:11728 Z:1579
