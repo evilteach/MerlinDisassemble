@@ -1,27 +1,28 @@
-//
-//  MerlinDisassemble.hpp
-//
-// MIT License
-// 
-// Copyright (c) 2024 EvilTeach
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
+//                                                                                   
+//  MerlinDisassemble.hpp                                                            
+//                                                                                   
+// MIT License                                                                       
+//                                                                                   
+// Copyright (c) 2024 EvilTeach                                                      
+//                                                                                   
+// Permission is hereby granted, free of charge, to any person obtaining a copy      
+// of this software and associated documentation files (the "Software"), to deal     
+// in the Software without restriction, including without limitation the rights      
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell         
+// copies of the Software, and to permit persons to whom the Software is             
+// furnished to do so, subject to the following conditions:                          
+//                                                                                   
+// The above copyright notice and this permission notice shall be included in all    
+// copies or substantial portions of the Software.                                   
+//                                                                                   
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR        
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,          
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE       
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER            
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,     
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE     
+// SOFTWARE.                                                                         
+
 
 void uppercase
 (
@@ -30,6 +31,7 @@ void uppercase
 {
     for (auto &c: value) c = (char) toupper(c);
 }
+
 
 void trim
 (
@@ -40,21 +42,24 @@ void trim
     line.erase(0, line.find_first_not_of("\n\r "));
 }
 
+
 namespace MerlinDisassembleNamespace
 {
     const std::string merlinCodes[] =
     {
          "G0,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
         ,"G1,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
-        ,"G2,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FsPEED, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
-        ,"G3,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FsPEED, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
-        ,"M20, LIST SD CARD,            FBin Files, LLong File Name, TTimestamp"
+        ,"G2,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FSpeed, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
+        ,"G3,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FSpeed, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
+        ,"G4,  DWELL,                   PMilliseconds, SSeconds"
         ,"G28, AUTO HOME,               LRestore Leveling State, OSkip Homing, RRaise Nozzle, XX Axis, YY Axis, ZZ Axis"
-        ,"M80, POWER ON,                SReport Power Supply State"
         ,"G90, ABSOLUTE POSITIONING"
         ,"G91, RELATIVE POSITIONING"
         ,"G92, SET POSITION,            XX, YY, ZZ, EE"
+        ,"M20, LIST SD CARD,            FBin Files, LLong File Name, TTimestamp"
+        ,"M80, POWER ON,                SReport Power Supply State"
         ,"M82, E ABSOLUTE"
+        ,"M83, E RELATIVE"
         ,"M84, DISABLE STEPPERS,        SSeconds, XX Axis,YY Axis, ZZ Axis, EExtruder, AA Axis, BB Axis, CC Axis, UU Axis, VV Axis, WW Axis"
         ,"M104,START HOTEND TEMP,       BMaxAutoTemp, FAutoTemp Flag, IMaterial Preset Index, STemp, THotEnd"
         ,"M105,REPORT TEMP,             RRedundant Temp, THotEnd"
@@ -73,14 +78,19 @@ namespace MerlinDisassembleNamespace
         ,"M221,SET FLOW RATE %,         SFlow%, TExtruder"
         ,"T0,  SELECT/REPORT TOOL"
 
-        // DEFERRED BUG more G/M codes as needed.
+        // DEFERRED TODO add more G/M codes as needed.
     };
 
     std::size_t merlinCodesCount = sizeof(merlinCodes) / sizeof(merlinCodes[0]);
 
+
+    //
+    //
+    //
     class MerlinDisassemble
     {
         public:
+
 
             MerlinDisassemble
             (
@@ -89,12 +99,14 @@ namespace MerlinDisassembleNamespace
             {
             }
 
+
             ~MerlinDisassemble
             (
                 void
             )
             {
             }
+
 
             void show_line_numbers
             (
@@ -104,6 +116,7 @@ namespace MerlinDisassembleNamespace
                 showLineNumbers = 1;
             }
 
+
             void set_comment_column
             (
                 int iCommentColumn
@@ -111,6 +124,7 @@ namespace MerlinDisassembleNamespace
             {
                 commentColumn = iCommentColumn;
             }
+
 
             int process
             (
@@ -250,17 +264,20 @@ namespace MerlinDisassembleNamespace
                     {
                         if (command == "")
                         {
-                            // Blank commands aren't interesting.
+                            // Blank commands aren't interesting so ignore them.
                         }
                         else
                         {
-                            oss << std::left << std::setw(5) << command << "unknown at line " << lineNumber;
+                            // Make unsupported commands stand out like a sore thumb.
+                            oss << "*********************************** <"  << command << "> "
+                                << " is not recognized on line " << lineNumber;
                         }
                     }
                     else
                     {
                         // Attempt to display the line in a more human readable form.
-                        // Note in this implementation we are forcing the arguments into a fixed order.
+                        // Note in this implementation we are forcing the arguments into a fixed known order.
+
                         std::istringstream merlinCodeStream (merlinCodes[z]);
                         std::getline(merlinCodeStream, command, ',');
                         oss << std::left << std::setw(5) << command;
@@ -272,7 +289,7 @@ namespace MerlinDisassembleNamespace
 
                         if (command == "M117")
                         {
-                            // It is literally just a set of strings.
+                            // This gcode just displays some strings
                             for (auto &argument : arguments)
                             {
                                 oss << argument << " ";
@@ -280,16 +297,6 @@ namespace MerlinDisassembleNamespace
                         }
                         else
                         {
-                            bool showActualExtrusion = false;
-                            if (command == "G0" || command == "G1")
-                            {
-                                showActualExtrusion = true;
-                            }
-                            else
-                            {
-                                // We don't need to show anything for this Merlin code.
-                            }
-
                             // Check all of the arguments that this Merlin Code supports.
                             std::string referenceArgument;
                             while (std::getline(merlinCodeStream, referenceArgument, ','))
@@ -312,14 +319,39 @@ namespace MerlinDisassembleNamespace
                                     // If they are the same we can display something
                                     if (actualArgumentType == referenceArgumentType)
                                     {
-                                        if (showActualExtrusion && referenceArgumentType == "E")
+                                        if (actualArgumentType == "E")
                                         {
-                                            // Show E value with calculated extrusion
-                                            // BUG force .5 digits on it.
-                                            double extrusionAmount = atof(actualArgumentValue.c_str()) - lastExtrusion;
-                                            lastExtrusion = atof(actualArgumentValue.c_str());
+                                            // For extrusions we need to do a few things to make the actual
+                                            // extrusion amounts easier to understand.
 
-                                            oss << referenceArgumentName << ":" << actualArgumentValue << "(" << extrusionAmount << "), ";
+                                            if (command == "M92")
+                                            {
+                                                // Reset the extruder start point.
+                                                lastExtrusion = 0;
+                                                oss << referenceArgumentName << ":" << actualArgumentValue << ", ";
+                                            }
+                                            else
+                                            {
+                                                if (command == "G0" || command == "G1" ||
+                                                    command == "G2" || command == "G3")
+                                                {
+                                                    // This is a gcode which also include an extrusion.
+                                                    // Show it with the calculated amount.
+                                                    double extrusionAmount = atof(actualArgumentValue.c_str()) -
+                                                                             lastExtrusion;
+                                                    lastExtrusion = atof(actualArgumentValue.c_str());
+
+                                                    // A precision of 6 seems to maintain the values that come
+                                                    // out of the file
+                                                    oss << referenceArgumentName << ":" << actualArgumentValue 
+                                                        << "(" << std::setprecision(6) << extrusionAmount << "), ";
+                                                }
+                                                else
+                                                {
+                                                    // Just show what ever the value is.
+                                                    oss << referenceArgumentName << ":" << actualArgumentValue << ", ";
+                                                }
+                                            }
                                         }
                                         else
                                         {
@@ -334,7 +366,7 @@ namespace MerlinDisassembleNamespace
                                 }
                             }
 
-                            // Hide the last comma.
+                            // Replace the last commas by spaces.
                             std::string tmp = oss.str();
                             tmp.pop_back();
                             tmp.pop_back();
@@ -353,6 +385,8 @@ namespace MerlinDisassembleNamespace
                     {
                         if (commentColumn < (int) ossSize)
                         {
+                            // No padding is needed.
+                            // Just plop it on the end.
                         }
                         else
                         {
@@ -364,6 +398,7 @@ namespace MerlinDisassembleNamespace
                     }
                     else
                     {
+                        // The command line switch requested no comments.
                     }
 
                     out << oss.str() << std::endl;
@@ -374,7 +409,10 @@ namespace MerlinDisassembleNamespace
 
         protected :
 
+            // By default don't show line numbers.
             int showLineNumbers = 0;
+
+            // By default put comments in column 100.
             int commentColumn   = 100;
     };
 }
