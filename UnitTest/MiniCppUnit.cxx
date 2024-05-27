@@ -154,11 +154,11 @@ void Assert::assertIguals( const std::string expected, const std::string result,
 	int indexDiferent = notEqualIndex(expected, result);
 	TestsListener::theInstance().errorsLog()
 		<< file << ", linia: " << linia << "\n"
-		<< errmsgTag_expected() << "\n\033[36;1m" 
+		<< errmsgTag_expected() << "\n<\033[36;1m" 
 		<< expected.substr(0,(std::size_t)indexDiferent)
-		<< "\033[32;1m" << expected.substr((std::size_t)indexDiferent) << "\033[0m\n"
-		<< errmsgTag_butWas() << "\033[36;1m \n" << result.substr(0,(std::size_t) indexDiferent)
-		<< "\033[31;1m" << result.substr((std::size_t) indexDiferent) << "\033[0m\n";
+		<< "\033[32;1m" << expected.substr((std::size_t)indexDiferent) << ">\033[0m\n"
+		<< errmsgTag_butWas() << "\033[36;1m \n<" << result.substr(0,(std::size_t) indexDiferent)
+		<< "\033[31;1m" << result.substr((std::size_t) indexDiferent) << ">\033[0m\n";
 
 	TestsListener::theInstance().testHasFailed();
 }

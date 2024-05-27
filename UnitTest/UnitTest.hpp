@@ -1,4 +1,10 @@
 
+//  TODO - comment vs no comment
+//  TODO - move comment to a different column
+//  TODO - line numbers
+//  TODO - bad command line switch
+
+
 class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 {
     public:
@@ -37,165 +43,236 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
             TEST_CASE (T0  );  // "T0,  SELECT/REPORT TOOL"
         }
 
-    void G0(void)
-    {
-        const char *sent        = "g0 x10 y20 z30 e40 f100 s200";
-        const char *expected    = "G0   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ";
 
+        //                                                                     
+        //  This function does the work for the passed in test.                
+        //                                                                     
+        void test
+        (
+            const char *iSendThis,
+            const char *iExpectThis
+        )
         {
             std::ofstream out ("sent.txt");
-            out << sent << std::endl;
-        }
+            out << iSendThis << std::endl;
 
-        std::string command = "..\\Debug\\MerlinDisassemble.exe ";
-                    command += "sent.txt";
+            std::string command = "..\\Debug\\MerlinDisassemble.exe ";
+                        command += "sent.txt";
 
-        FILE *fp = _popen(command.c_str(), "r");
-        if (fp)
-        {
-            char buffer[1000] = "";
-            while (fgets(buffer, sizeof(buffer), fp) != nullptr)
+            FILE *fp = _popen(command.c_str(), "r");
+            if (fp)
             {
-                std::size_t len = strlen(buffer);
-                if (len > 0)
+                char buffer[1000] = "";
+                while (fgets(buffer, sizeof(buffer), fp) != nullptr)
                 {
-                    buffer[len - 1] = '\0';
-                }
-                else
-                {
+                    std::size_t len = strlen(buffer);
+                    if (len > 0)
+                    {
+                        buffer[len - 1] = '\0';
+                    }
+                    else
+                    {
+                    }
+
+                    ASSERT_EQUALS(iExpectThis, buffer);
                 }
 
-//               std::cout << strlen(buffer) << std::endl;
-//               std::cout << strlen(expected) << std::endl;
-//               std::cout << "<" << buffer << ">" << std::endl;
-//               std::cout << "<" << expected << ">" << std::endl;
-//
-                ASSERT_EQUALS(expected, buffer);
+                fclose(fp);
             }
-
-            fclose(fp);
+            else
+            {
+                FAIL("The command did not run");
+            }
         }
-        else
+
+        void G0(void)
         {
-            std::cerr << "Shit" << std::endl;
+            const char *sent        = "g0 x10 y20 z30 e40 f100 s200";
+            const char *expected    = "G0   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ";
+            test(sent, expected);
         }
-    }
 
-    void G1(void)
-    {
-    }
+        void G1(void)
+        {
+            const char *sent        = "g1 x10 y20 z30 e40 f100 s200";
+            const char *expected    = "G1   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ";
+            test(sent, expected);
+        }
 
-    void G2(void)
-    {
-    }
+        void G2(void)
+        {
+            const char *sent        = "g2 x10 y20 z30 e40 f100 s200 i12 jy13 p7 r92";
+            const char *expected    = "G2   ARC/CIRCLE MOVE        X:10, Y:20, Z:30, E:40(40), Speed:100, X Arc Center:12, Y Arc Center:y13, Complete Circle:7, Radius:92, Power:200  ";
+            test(sent, expected);
+        }
 
-    void G3(void)
-    {
-    }
+        void G3(void)
+        {
+            const char *sent        = "g3 x10 y20 z30 e40 f100 s200 i12 jy13 p7 r92";
+            const char *expected    = "G3   ARC/CIRCLE MOVE        X:10, Y:20, Z:30, E:40(40), Speed:100, X Arc Center:12, Y Arc Center:y13, Complete Circle:7, Radius:92, Power:200  ";
+            test(sent, expected);
+        }
 
-    void G4(void)
-    {
-    }
+        void G4(void)
+        {
+            const char *sent        = "g4 P111 S222";
+            const char *expected    = "G4   DWELL                  Milliseconds:111, Seconds:222                                           ";
+            test(sent, expected);
+        }
 
-    void G28(void)
-    {
-    }
+        void G28(void)
+        {
+            const char *sent        = "g28 L1 O2 R3 X4 Y5 Z6";
+            const char *expected    = "G28  AUTO HOME              Restore Leveling State:1, Skip Homing:2, Raise Nozzle:3, X Axis:4, Y Axis:5, Z Axis:6  ";
+            test(sent, expected);
+        }
 
-    void G90(void)
-    {
-    }
+        void G90(void)
+        {
+            const char *sent        = "g90";
+            const char *expected    = "G90  ABSOLUTE POSITIONING                                                                           ";
+            test(sent, expected);
+        }
 
-    void G91(void)
-    {
-    }
+        void G91(void)
+        {
+            const char *sent        = "g91";
+            const char *expected    = "G91  RELATIVE POSITIONING                                                                           ";
+            test(sent, expected);
+        }
 
-    void G92(void)
-    {
-    }
+        void G92(void)
+        {
+            const char *sent        = "g92 x1 y2 z3 e4";
+            const char *expected    = "G92  SET POSITION           X:1, Y:2, Z:3, E:4                                                      ";
+            test(sent, expected);
+        }
 
-    void M20(void)
-    {
-    }
+        void M20(void)
+        {
+            // "M20, LIST SD CARD,            FBin Files, LLong File Name, TTimestamp"
+            const char *sent        = "m20 f1 l2 t3";
+            const char *expected    = "M20  LIST SD CARD           Bin Files:1, Long File Name:2, Timestamp:3                              ";
+            test(sent, expected);
+        }
 
-    void M80(void)
-    {
-    }
+        void M80(void)
+        {
+            // "M80, POWER ON,                SReport Power Supply State"
+            const char *sent        = "m80 s1";
+            const char *expected    = "M80  POWER ON               Report Power Supply State:1                                             ";
+            test(sent, expected);
+        }
 
-    void M82(void)
-    {
-    }
+        void M82(void)
+        {
+            // "M82, E ABSOLUTE"
+            const char *sent        = "m82";
+            const char *expected    = "M82  E ABSOLUTE                                                                                     ";
+            test(sent, expected);
+        }
 
-    void M83(void)
-    {
-    }
+        void M83(void)
+        {
+            // "M83, E RELATIVE"
+            const char *sent        = "m83";
+            const char *expected    = "M83  E RELATIVE                                                                                     ";
+            test(sent, expected);
+        }
 
-    void M84(void)
-    {
-    }
+        void M84(void)
+        {
+            // "M84, DISABLE STEPPERS,        SSeconds, XX Axis,YY Axis, ZZ Axis, EExtruder, AA Axis, BB Axis, CC Axis, UU Axis, VV Axis, WW Axis"
+            const char *sent        = "m84 S1 X2 Y3 E4 A5 B6 C7 U8 V9 W10";
+            const char *expected    = "M84  DISABLE STEPPERS       Seconds:1, X Axis:2, Y Axis:3, Extruder:4, A Axis:5, B Axis:6, C Axis:7, U Axis:8, V Axis:9, W Axis:10  ";
+            test(sent, expected);
+        }
 
-    void M104(void)
-    {
-    }
+        void M104(void)
+        {
+            // "M104,START HOTEND TEMP,       BMaxAutoTemp, FAutoTemp Flag, IMaterial Preset Index, STemp, THotEnd"
+            const char *sent        = "m104 B1 F2 I3 S4 T5";
+            const char *expected    = "M104 START HOTEND TEMP      MaxAutoTemp:1, AutoTemp Flag:2, Material Preset Index:3, Temp:4, HotEnd:5  ";
+            test(sent, expected);
+        }
 
-    void M105(void)
-    {
-    }
+        void M105(void)
+        {
+            // "M105,REPORT TEMP,             RRedundant Temp, THotEnd"
+            const char *sent        = "M105 R1 T2";
+            const char *expected    = "M105 REPORT TEMP            Redundant Temp:1, HotEnd:2                                              ";
+            test(sent, expected);
+        }
 
-    void M106(void)
-    {
-    }
+        void M106(void)
+        {
+// "M106,SET FAN SPEED,           IMaterial preset, PFan, SSpeed, TSecondary Speed"
+        }
 
-    void M107(void)
-    {
-    }
+        void M107(void)
+        {
+// "M107,FAN OFF,                 PIndex"
+        }
 
-    void M109(void)
-    {
-    }
+        void M109(void)
+        {
+// "M109,WAIT HOTEND TEMP,        BMax Auto Temp, FAuto Temp Flag, IMaterial preset index, RHotCool Wait, STemp, THotEnd"
+        }
 
-    void M110(void)
-    {
-    }
+        void M110(void)
+        {
+// "M110,SET/GET LINE NUMBER,     NLineNumber"
+        }
 
-    void M111(void)
-    {
-    }
+        void M111(void)
+        {
+// "M111,SET DEBUG LEVEL,         SFlags"
+        }
 
-    void M114(void)
-    {
-    }
+        void M114(void)
+        {
+// "M114,GET CURRENT POS,         DDetailed, EStepper, RReal"
+        }
 
-    void M115(void)
-    {
-    }
+        void M115(void)
+        {
+// "M115,SHOW FIRMWARE INFO"
+        }
 
-    void M117(void)
-    {
-    }
+        void M117(void)
+        {
+// "M117,SET LCD MESSAGE"
+        }
 
-    void M140(void)
-    {
-    }
+        void M140(void)
+        {
+// "M140,START BED TEMP,          IIndex, STemp"
+        }
 
-    void M155(void)
-    {
-    }
+        void M155(void)
+        {
+// "M155,TEMP AUTO REPORT,        SSeconds"
+        }
 
-    void M190(void)
-    {
-    }
+        void M190(void)
+        {
+// "M190,WAIT BED TEMP,           IIndex, RTemp, STemp, TSeconds"
+        }
 
-    void M220(void)
-    {
-    }
+        void M220(void)
+        {
+// "M220,SET FEED RATE %,         Backup Factor, Restore Factor, SPercentage"
+        }
 
-    void M221(void)
-    {
-    }
+        void M221(void)
+        {
+// "M221,SET FLOW RATE %,         SFlow%, TExtruder"
+        }
 
-    void T0(void)
-    {
-    }
+        void T0(void)
+        {
+// "T0,  SELECT/REPORT TOOL"
+        }
 };
 
 REGISTER_FIXTURE( MerlinGCodeTests );
