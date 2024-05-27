@@ -75,7 +75,7 @@ namespace MerlinDisassembleNamespace
         ,"M140,START BED TEMP,          IIndex, STemp"
         ,"M155,TEMP AUTO REPORT,        SSeconds"
         ,"M190,WAIT BED TEMP,           IIndex, RTemp, STemp, TSeconds"
-        ,"M220,SET FEED RATE %,         Backup Factor, Restore Factor, SPercentage"
+        ,"M220,SET FEED RATE %,         BBackup Factor, RRestore Factor, SPercentage"
         ,"M221,SET FLOW RATE %,         SFlow%, TExtruder"
         ,"T0,  SELECT/REPORT TOOL"
 
