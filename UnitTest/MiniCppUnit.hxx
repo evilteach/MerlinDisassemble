@@ -79,14 +79,14 @@
 #include <sstream>
 #include <list>
 
-#ifdef WIN32
-/** necesary for Visual 6 which don't define std::min */
-namespace std
-{
-	template<typename T>
-	min(const T& a, const T& b) { return a < b ? a: b; }
-}
-#endif
+//#ifdef WIN32
+///** necesary for Visual 6 which don't define std::min */
+//namespace std
+//{
+//	template<typename T>
+//	min(const T& a, const T& b) { return a < b ? a: b; }
+//}
+//#endif
 
 /**
  * A singleton class. 
@@ -98,34 +98,34 @@ namespace std
  */
 class TestsListener
 {
-public:
-	/** accessor to the global (static) singleton instance */
-	static TestsListener& theInstance();
-	std::stringstream& errorsLog();
-	std::string logString();
-	void currentTestName( std::string& name);
-	static void testHasRun();
-	static void testHasFailed();
-	static void testHasThrown();
-	/** the human readable summary of run tests*/
-	std::string summary();
-	/** returns wheather all run tests have passed */
-	static bool allTestsPassed();
+    public:
+	    /** accessor to the global (static) singleton instance */
+	    static TestsListener& theInstance();
+	    std::stringstream& errorsLog();
+	    std::string logString();
+	    void currentTestName( std::string& name);
+	    static void testHasRun();
+	    static void testHasFailed();
+	    static void testHasThrown();
+	    /** the human readable summary of run tests*/
+	    std::string summary();
+	    /** returns whether all run tests have passed */
+	    static bool allTestsPassed();
 	
 private:
-	static const char* errmsgTag_nameOfTest() { return "Test failed: "; }
+	    static const char* errmsgTag_nameOfTest() { return "Test failed: "; }
 	
-	/** constructor private: force the singleton to be wellbehaved ! */
-	TestsListener() : _currentTestName(0)
-	{
-		_executed=_failed=_exceptions=0;
-	}
+	    /** constructor private: force the singleton to be wellbehaved ! */
+	    TestsListener() : _currentTestName(0)
+	    {
+		    _executed=_failed=_exceptions=0;
+	    }
 	
-	std::string* _currentTestName;
-	std::stringstream _log;
-	unsigned _executed;
-	unsigned _failed;
-	unsigned _exceptions;
+	    std::string* _currentTestName;
+	    std::stringstream _log;
+	    unsigned _executed;
+	    unsigned _failed;
+	    unsigned _exceptions;
 };
 
 /**
@@ -136,17 +136,17 @@ private:
  **/
 class Test
 {
-public:
-	virtual ~Test(){}
-	/** run the test: exercice the code and check results*/
-	virtual void runTest() = 0;
-	/** the test human-readable name */
-	virtual std::string name() const = 0;
+    public:
+	    virtual ~Test(){}
+	    /** run the test: exercise the code and check results*/
+	    virtual void runTest() = 0;
+	    /** the test human-readable name */
+	    virtual std::string name() const = 0;
 };
 
 /**
  * A TestFixture is a class that contain TestCases --which corresponds to 
- * ConcreteTestFixture methods-- common objects uder tests, and setUp and
+ * ConcreteTestFixture methods-- common objects under tests, and setUp and
  * tearDown methods which are automatically executed before and after each
  * test case.
  *
@@ -162,121 +162,125 @@ public:
 template <typename ConcreteTestFixture>
 class TestFixture : public Test
 {
-protected:
+    protected:
 
-	typedef ConcreteTestFixture ConcreteFixture;
-	typedef void(ConcreteTestFixture::*TestCaseMethod)();
+	    typedef ConcreteTestFixture ConcreteFixture;
+	    typedef void(ConcreteTestFixture::*TestCaseMethod)();
 
-	/**
-	 * Wrapper for the test methods of concrete TestFixtures.
-	 *
-	 * Makes the 'Leave' role in the 'Composite' GoF pattern because can't be
-	 * be a composition of other tests.
-	 * 
-	 * It's also a case of 'Command' pattern because it encapsules in an object 
-	 * certain functionality whose execution depends on some deferred entity.
-	 */
-	class TestCase : public Test
-	{
-	public:
-		TestCase(ConcreteFixture* parent, TestCaseMethod method, const std::string & name) : 
-		  _parent(parent),
-		  _testCaseMethod(method),
-		  _name(name)
-		{
-		}
-		/** calls TestFixture method.  setUp and tearDown methods are called by
-		 * its parent TestFixture (in its runTest method).
-		 * it is robust to unexpected exceptions (throw) */
-		void runTest()
-		{
-			TestsListener::theInstance().testHasRun();
-			TestsListener::theInstance().currentTestName(_name);
-			try
-			{
-				(_parent->*_testCaseMethod)();
-			}
-			catch( std::exception& error )
-			{
-				TestsListener::theInstance().testHasThrown();
-				TestsListener::theInstance().errorsLog() 
-					<< "std::exception catched by MiniCppUnit: "
-					<< error.what() << "\n";
-			}
-			catch(...)
-			{
-				TestsListener::theInstance().testHasThrown();
-				TestsListener::theInstance().errorsLog() 
-					<< "non standard exception catched by MiniCppUnit.\n";
-			}
-		}
+	    /**
+	     * Wrapper for the test methods of concrete TestFixtures.
+	     *
+	     * Makes the 'Leave' role in the 'Composite' GoF pattern because can't be
+	     * be a composition of other tests.
+	     * 
+	     * It's also a case of 'Command' pattern because it encapsules in an object 
+	     * certain functionality whose execution depends on some deferred entity.
+	     */
+	    class TestCase : public Test
+	    {
+	        public:
 
-		/** the TestFixture method hame */
-		std::string name() const
-		{
-			return _name;
-		}
+		        TestCase(ConcreteFixture* parent, TestCaseMethod method, const std::string & name) : 
+		          _parent(parent),
+		          _testCaseMethod(method),
+		          _name(name)
+		        {
+		        }
 
-	private:
-		ConcreteFixture* _parent;
-		TestCaseMethod _testCaseMethod;
-		std::string _name;
+		        /** calls TestFixture method.  setUp and tearDown methods are called by
+		         * its parent TestFixture (in its runTest method).
+		         * it is robust to unexpected exceptions (throw) */
+		        void runTest()
+		        {
+			        TestsListener::theInstance().testHasRun();
+			        TestsListener::theInstance().currentTestName(_name);
+			        try
+			        {
+				        (_parent->*_testCaseMethod)();
+			        }
+			        catch( std::exception& error )
+			        {
+				        TestsListener::theInstance().testHasThrown();
+				        TestsListener::theInstance().errorsLog() 
+					        << "std::exception catched by MiniCppUnit: "
+					        << error.what() << "                                                            \n";
+			        }
+			        catch(...)
+			        {
+				        TestsListener::theInstance().testHasThrown();
+				        TestsListener::theInstance().errorsLog() 
+					        << "non standard exception catched by MiniCppUnit.                                                            \n";
+			        }
+		        }
+
+		    /** the TestFixture method hame */
+		    std::string name() const
+		    {
+			    return _name;
+		    }
+
+	    private:
+
+		    ConcreteFixture* _parent;
+		    TestCaseMethod _testCaseMethod;
+		    std::string _name;
 	};
+
     //------------- end of class TestCase ----------------------------
 
-private:
+    private:
 	
-	typedef std::list<Test*> TestCases;
-	TestCases _testCases;
-	std::string _name;
+	    typedef std::list<Test*> TestCases;
+	    TestCases _testCases;
+	    std::string _name;
 
-	void testsList() const
-	{
-		std::cout << "\n+ " << name() << "\n";
-		for( TestCases::const_iterator it=_testCases.begin(); 
-			it!=_testCases.end(); it++ )
-			std::cout << "  - "<< (*it)->name() << "\n";
-	}
+	    void testsList() const
+	    {
+		    std::cout << "                                                            \n+ " << name() << "                                                            \n";
+		    for( TestCases::const_iterator it=_testCases.begin(); 
+			    it!=_testCases.end(); it++ )
+			    std::cout << "  - "<< (*it)->name() << "                                                            \n";
+	    }
 	
 
-public:
-	virtual void setUp() {}
-	virtual void tearDown() {}
+    public:
+	    virtual void setUp() {}
+	    virtual void tearDown() {}
 
-	std::string name() const 
-	{
-		return _name;
-	};
+	    std::string name() const 
+	    {
+		    return _name;
+	    };
 
-	TestFixture(const std::string& name="A text fixture") : _name(name)
-	{
-	}
+	    TestFixture(const std::string& name="A text fixture") : _name(name)
+	    {
+	    }
 
-	void afegeixCasDeTest(ConcreteFixture* parent, TestCaseMethod method, const char* name)
-	{
-		TestCase* casDeTest = new TestCase(parent, method, _name + "::" + name);
-		_testCases.push_back( casDeTest );
-	}
-	/** calls each test after setUp and tearDown TestFixture methods */
-	void runTest()
-	{
-		testsList();
-		TestCases::iterator it;
-		for( it=_testCases.begin(); it!=_testCases.end(); it++)
-		{
-			setUp();
-			(*it)->runTest();
-			tearDown();
-		}
-	}
-	/** TestCase that wrapps TestFixture methods are dynamically created and owned by 
-	 * the TestFixture. So here we clean it up*/
-	~TestFixture()
-	{	
-		TestCases::iterator it;
-		for( it =_testCases.begin(); it!=_testCases.end(); it++)
-			delete (*it);
-	}
+	    void afegeixCasDeTest(ConcreteFixture* parent, TestCaseMethod method, const char* name)
+	    {
+		    TestCase* casDeTest = new TestCase(parent, method, _name + "::" + name);
+		    _testCases.push_back( casDeTest );
+	    }
+	    /** calls each test after setUp and tearDown TestFixture methods */
+	    void runTest()
+	    {
+		    testsList();
+		    TestCases::iterator it;
+		    for( it=_testCases.begin(); it!=_testCases.end(); it++)
+		    {
+			    setUp();
+			    (*it)->runTest();
+			    tearDown();
+		    }
+	    }
+	    /** TestCase that wraps TestFixture methods are dynamically created and owned by 
+	     * the TestFixture. So here we clean it up*/
+	    ~TestFixture()
+	    {	
+		    TestCases::iterator it;
+		    for( it =_testCases.begin(); it!=_testCases.end(); it++)
+			    delete (*it);
+	    }
 };
 
 //----------------------------------------------------------
@@ -287,51 +291,50 @@ public:
  */
 class Assert
 {
-	static const char * errmsgTag_testFailedIn() { return "Test failed in "; }
-	static const char * errmsgTag_inLine() { return ", line: "; };
-	static const char * errmsgTag_failedExpression() { return "Failed expression: "; } 
-	static const char * errmsgTag_expected() { return "Expected: "; } 
-	static const char * errmsgTag_butWas() { return "But was: "; } 
-public:
-	template<typename AType>
-	static void assertIguals( const AType& expected, const AType& result,
-		const char* file="", int linia=0 )
-	{
-		if(expected != result)
-		{
-			TestsListener::theInstance().errorsLog() 
-				<< file << ", linia: " << linia << "\n"
-				<< errmsgTag_expected() << "\n" << expected << "\n"
-				<< errmsgTag_butWas() << "\n" << result << "\n";
-			TestsListener::theInstance().testHasFailed();
-		}
-	}
+	    static const char * errmsgTag_testFailedIn() { return "Test failed in "; }
+	    static const char * errmsgTag_inLine() { return ", line: "; };
+	    static const char * errmsgTag_failedExpression() { return "Failed expression: "; } 
+	    static const char * errmsgTag_expected() { return "Expected: "; } 
+	    static const char * errmsgTag_butWas() { return "But was: "; } 
 
-	static void assertTrue(char* strExpression, bool expression,
-			const char* file="", int linia=0);
+    public:
+	    template<typename AType>
+	    static void assertIguals( const AType& expected, const AType& result,
+		    const char* file="", int linia=0 )
+	    {
+		    if(expected != result)
+		    {
+			    TestsListener::theInstance().errorsLog() 
+				    << file << ", linia: " << linia << "                                                            \n"
+				    << errmsgTag_expected() << "                                                            \n" << expected << "                                                            \n"
+				    << errmsgTag_butWas() << "                                                            \n" << result << "                                                            \n";
+			    TestsListener::theInstance().testHasFailed();
+		    }
+	    }
 
-	static void assertTrueMissatge(const char* strExpression, bool expression, 
-			const char* missatge, const char* file="", int linia=0);
+	    static void assertTrue(char* strExpression, bool expression,
+			    const char* file="", int linia=0);
 
-	static void assertIguals( const char * expected, const char * result,
-		const char* file="", int linia=0 );
+	    static void assertTrueMissatge(const char* strExpression, bool expression, 
+			    const char* missatge, const char* file="", int linia=0);
+
+	    static void assertIguals( const char * expected, const char * result,
+		    const char* file="", int linia=0 );
 	
-	static void assertIguals( const bool& expected, const bool& result,
-		const char* file="", int linia=0 );
+	    static void assertIguals( const bool& expected, const bool& result,
+		    const char* file="", int linia=0 );
 
-	static int notEqualIndex( const std::string & one, const std::string & other );
+	    static int notEqualIndex( const std::string & one, const std::string & other );
 
-	/**
-	 * we overload the assert with string doing colored diffs
-	 *
-	 * MS Visual6 doesn't allow string by reference :-( 
-	 */
-	static void assertIguals( const std::string expected, const std::string result,
-		const char* file="", int linia=0 );
+	    /**
+	     * we overload the assert with string doing colored diffs
+	     *
+	     * MS Visual6 doesn't allow string by reference :-( 
+	     */
+	    static void assertIguals( const std::string expected, const std::string result,
+		    const char* file="", int linia=0 );
 	
-	static void fail(const char* motiu, const char* file="", int linia=0);
-
-
+	    static void fail(const char* motiu, const char* file="", int linia=0);
 };
 
 /**
@@ -339,82 +342,86 @@ public:
  */
 class TestFixtureFactory
 {
-private:
-	/** Well behaved singleton: 
-	 *  Don't allow instantiation apart from theInstance(), so private ctr.*/
-	TestFixtureFactory()
-	{
-	}
-	typedef Test* (*FixtureCreator)();
-	std::list<FixtureCreator> _creators;
-public:
-	/** Accessor to the (static) singleton instance */
-	static TestFixtureFactory& theInstance()
-	{
-		static TestFixtureFactory theFactory;
-		return theFactory;
-	}
-	bool runTests()
-	{
-		std::list<FixtureCreator>::iterator it;
-		for(it=_creators.begin(); it!=_creators.end(); it++)
-		{	
-			FixtureCreator creator = *it;
-			Test* test = creator();
-			test->runTest();
-			delete test;
-		}
-		std::string errors =  TestsListener::theInstance().logString();
-		if (errors!="") std::cout << "\n\nError Details:\n" << errors;
-		std::cout << TestsListener::theInstance().summary();
+    private:
 
-		return TestsListener::theInstance().allTestsPassed();	
-	}
-	void addFixtureCreator(FixtureCreator creator)
-	{
-		_creators.push_back( creator );
-	}
-	
+	    /** Well behaved singleton: 
+	     *  Don't allow instantiation apart from theInstance(), so private ctr.*/
+	    TestFixtureFactory()
+	    {
+	    }
+
+	    typedef Test* (*FixtureCreator)();
+	    std::list<FixtureCreator> _creators;
+
+    public:
+	    /** Accessor to the (static) singleton instance */
+	    static TestFixtureFactory& theInstance()
+	    {
+		    static TestFixtureFactory theFactory;
+		    return theFactory;
+	    }
+
+	    bool runTests()
+	    {
+		    std::list<FixtureCreator>::iterator it;
+		    for(it=_creators.begin(); it!=_creators.end(); it++)
+		    {	
+			    FixtureCreator creator = *it;
+			    Test* test = creator();
+			    test->runTest();
+			    delete test;
+		    }
+		    std::string errors =  TestsListener::theInstance().logString();
+		    if (errors!="") std::cout << "                                                            \n                                                            \nError Details:                                                            \n" << errors;
+		    std::cout << TestsListener::theInstance().summary();
+
+		    return TestsListener::theInstance().allTestsPassed();	
+	    }
+
+	    void addFixtureCreator(FixtureCreator creator)
+	    {
+		    _creators.push_back( creator );
+	    }
 };
 
 /** 
  * Macro a usar després de cada classe de test
  */
-#define REGISTER_FIXTURE( ConcreteTestFixture ) \
-\
-Test* Creador##ConcreteTestFixture() { return new ConcreteTestFixture; } \
-\
-class Registrador##ConcreteTestFixture \
-{ \
-public: \
-	Registrador##ConcreteTestFixture() \
-	{ \
-		TestFixtureFactory::theInstance().addFixtureCreator( \
-				Creador##ConcreteTestFixture); \
-	} \
-}; \
-static Registrador##ConcreteTestFixture estatic##ConcreteTestFixture;
+#define REGISTER_FIXTURE( ConcreteTestFixture )                              \
+                                                                             \
+    Test* Creador##ConcreteTestFixture() { return new ConcreteTestFixture; } \
+                                                                             \
+    class Registrador##ConcreteTestFixture                                   \
+    {                                                                        \
+        public:                                                              \
+            Registrador##ConcreteTestFixture()                               \
+            {                                                                \
+                TestFixtureFactory::theInstance().addFixtureCreator(         \
+                        Creador##ConcreteTestFixture);                       \
+            }                                                                \
+    };                                                                       \
+    static Registrador##ConcreteTestFixture estatic##ConcreteTestFixture;
 
 
 /**
  * Assert macros to use in test methods. An assert is a test condition
  * we want to check.
  */
-#define ASSERT_EQUALS( expected, result) \
+#define ASSERT_EQUALS( expected, result)                                     \
 	Assert::assertIguals( expected, result, __FILE__, __LINE__ );
 
-#define ASSERT( exp ) \
+#define ASSERT( exp )                                                        \
 	Assert::assertTrue(#exp, exp, __FILE__, __LINE__);
 
-#define ASSERT_MESSAGE( exp, message ) \
+#define ASSERT_MESSAGE( exp, message )                                       \
 	Assert::assertTrueMissatge(#exp, exp, message, __FILE__, __LINE__);
 
-#define FAIL( why ) \
+#define FAIL( why )                                                          \
 	Assert::fail(#why, __FILE__, __LINE__);
 
 /**
  * Macros that allows to write the  constructor of the concrete TestFixture.
- * What the constructor does is agregate a wrapper for each test case (method)
+ * What the constructor does is aggregate a wrapper for each test case (method)
  * As easy to write as this:
  *
  * @code
@@ -433,17 +440,11 @@ static Registrador##ConcreteTestFixture estatic##ConcreteTestFixture;
  * @endcode
  */
 
-#define TEST_FIXTURE( ConcreteFixture ) \
+#define TEST_FIXTURE( ConcreteFixture )                                      \
 	ConcreteFixture() : TestFixture<ConcreteFixture>( #ConcreteFixture )
 
-#define TEST_CASE( methodName ) \
+#define TEST_CASE( methodName )                                              \
 	afegeixCasDeTest( this, &ConcreteFixture::methodName, #methodName );
-
-
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -454,35 +455,37 @@ static Registrador##ConcreteTestFixture estatic##ConcreteTestFixture;
 /** 
  * Macro a usar després de cada classe de test
  */
-#define REGISTRA_TEST( ClasseDeTest ) \
-\
-Test* Creador##ClasseDeTest() { return new ClasseDeTest; } \
-\
-class Registrador##ClasseDeTest \
-{ \
-public: \
-	Registrador##ClasseDeTest() \
-	{ \
-		TestFixtureFactory::theInstance().addFixtureCreator( \
-				Creador##ClasseDeTest); \
-	} \
-}; \
+#define REGISTRA_TEST( ClasseDeTest )                               \
+                                                                    \
+Test* Creador##ClasseDeTest() { return new ClasseDeTest; }          \
+                                                                    \
+class Registrador##ClasseDeTest                                     \
+{                                                                   \
+    public:                                                         \
+	    Registrador##ClasseDeTest()                                 \
+	    {                                                           \
+		    TestFixtureFactory::theInstance().addFixtureCreator(    \
+				    Creador##ClasseDeTest);                         \
+	    }                                                           \
+};                                                                  \
 static Registrador##ClasseDeTest estatic##ClasseDeTest;
+
+
 /**
  * Macros d'assert a usar dins dels mètodes de testeig.
  * Un assert és una comprovació que volem testejar.
  */
-#define ASSERT_IGUALS( esperat, resultat) \
+#define ASSERT_IGUALS( esperat, resultat)                                 \
 	Assert::assertIguals( esperat, resultat, __FILE__, __LINE__ );
 
-#define ASSERT( exp ) \
+#define ASSERT( exp )                                                     \
 	Assert::assertTrue(#exp, exp, __FILE__, __LINE__);
 
-#define ASSERT_MISSATGE( exp, missatge ) \
+#define ASSERT_MISSATGE( exp, missatge )                                  \
 	Assert::assertTrueMissatge(#exp, exp, missatge, __FILE__, __LINE__);
 
 
-#define FALLA( motiu ) \
+#define FALLA( motiu )                                                    \
 	Assert::fail(#motiu, __FILE__, __LINE__);
 
 /**
@@ -504,10 +507,10 @@ static Registrador##ClasseDeTest estatic##ClasseDeTest;
  *		}
  */
 
-#define GRUP_DE_TESTS( GrupTestsConcret ) \
+#define GRUP_DE_TESTS( GrupTestsConcret )                                    \
 	GrupTestsConcret() : TestFixture<ConcreteFixture>( #GrupTestsConcret )
 
-#define CAS_DE_TEST( nomDelMetode ) \
+#define CAS_DE_TEST( nomDelMetode )                                          \
 	afegeixCasDeTest( this, &ConcreteFixture::nomDelMetode, #nomDelMetode );
 			     
 #endif  // MiniCppUnit_hxx
