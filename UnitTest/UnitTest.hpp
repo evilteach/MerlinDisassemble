@@ -1,10 +1,4 @@
 
-//  TODO - comment vs no comment
-//  TODO - move comment to a different column
-//  TODO - line numbers
-//  TODO - bad command line switch
-
-
 class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 {
     public:
@@ -43,6 +37,9 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
             TEST_CASE (T0  );  // "T0,  SELECT/REPORT TOOL"
         }
 
+        int showLineNumbers = 1;
+        int dontShowLineNumbers = 0;
+        int noComments = 0;
 
         //                                                                     
         //  This function does the work for the passed in test.                
@@ -50,14 +47,34 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
         void test
         (
             const char *iSendThis,
-            const char *iExpectThis
+            const char *iExpectThis,
+                  int   iLineNumbers = 0,
+                  int   iColumnNumber = 100,
+            const char *iExtraSwitch = ""
         )
         {
             std::ofstream out ("sent.txt");
             out << iSendThis << std::endl;
 
             std::string command = "..\\Debug\\MerlinDisassemble.exe ";
+                        command += iExtraSwitch;
+                        command += " ";
+                        
+                        if (iLineNumbers)
+                        {
+                            command += "-l ";
+                        }
+                        else
+                        {
+                        }
+
+                        command += "-c:";
+                        command += std::to_string(iColumnNumber);
+                        command += " ";
+
                         command += "sent.txt";
+
+            std::cerr << "<" << command << ">" << std::endl;
 
             FILE *fp = _popen(command.c_str(), "r");
             if (fp)
@@ -87,20 +104,25 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 
         void G0(void)
         {
+            // Test line numbers
+            // "G0,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
             const char *sent        = "g0 x10 y20 z30 e40 f100 s200";
-            const char *expected    = "G0   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ";
-            test(sent, expected);
+            const char *expected    = "     1 G0   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                 ";
+            test(sent, expected, showLineNumbers);
         }
 
         void G1(void)
         {
-            const char *sent        = "g1 x10 y20 z30 e40 f100 s200";
-            const char *expected    = "G1   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ";
+            // Test comments at column 100
+            // "G1,  LINEAR MOVE,             XX, YY, ZZ, EE, FSpeed, SPower"
+            const char *sent        = "g1 x10 y20 z30 e40 f100 s200 ; It Works$";
+            const char *expected    = "G1   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ; It Works$";
             test(sent, expected);
         }
 
         void G2(void)
         {
+            // "G2,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FSpeed, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
             const char *sent        = "g2 x10 y20 z30 e40 f100 s200 i12 jy13 p7 r92";
             const char *expected    = "G2   ARC/CIRCLE MOVE        X:10, Y:20, Z:30, E:40(40), Speed:100, X Arc Center:12, Y Arc Center:y13, Complete Circle:7, Radius:92, Power:200  ";
             test(sent, expected);
@@ -108,6 +130,7 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 
         void G3(void)
         {
+            // "G3,  ARC/CIRCLE MOVE,         XX, YY, ZZ, EE, FSpeed, IX Arc Center, JY Arc Center, PComplete Circle, RRadius, SPower"
             const char *sent        = "g3 x10 y20 z30 e40 f100 s200 i12 jy13 p7 r92";
             const char *expected    = "G3   ARC/CIRCLE MOVE        X:10, Y:20, Z:30, E:40(40), Speed:100, X Arc Center:12, Y Arc Center:y13, Complete Circle:7, Radius:92, Power:200  ";
             test(sent, expected);
@@ -115,13 +138,16 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 
         void G4(void)
         {
-            const char *sent        = "g4 P111 S222";
-            const char *expected    = "G4   DWELL                  Milliseconds:111, Seconds:222                                           ";
-            test(sent, expected);
+            // Test comments at 75
+            // "G4,  DWELL,                   PMilliseconds, SSeconds"
+            const char *sent        = "g4 P111 S222 ; Column 75";
+            const char *expected    = "G4   DWELL                  Milliseconds:111, Seconds:222                  ; Column 75";
+            test(sent, expected, dontShowLineNumbers, 75);
         }
 
         void G28(void)
         {
+            // "G28, AUTO HOME,               LRestore Leveling State, OSkip Homing, RRaise Nozzle, XX Axis, YY Axis, ZZ Axis"
             const char *sent        = "g28 L1 O2 R3 X4 Y5 Z6";
             const char *expected    = "G28  AUTO HOME              Restore Leveling State:1, Skip Homing:2, Raise Nozzle:3, X Axis:4, Y Axis:5, Z Axis:6  ";
             test(sent, expected);
@@ -129,6 +155,7 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 
         void G90(void)
         {
+            // "G90, ABSOLUTE POSITIONING"
             const char *sent        = "g90";
             const char *expected    = "G90  ABSOLUTE POSITIONING                                                                           ";
             test(sent, expected);
@@ -136,13 +163,16 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 
         void G91(void)
         {
-            const char *sent        = "g91";
-            const char *expected    = "G91  RELATIVE POSITIONING                                                                           ";
-            test(sent, expected);
+            // Test no comments
+            // "G91, RELATIVE POSITIONING"
+            const char *sent        = "g91  ; Supressed comment";
+            const char *expected    = "G91  RELATIVE POSITIONING   ";
+            test(sent, expected, dontShowLineNumbers, 0);
         }
 
         void G92(void)
         {
+            // "G92, SET POSITION,            XX, YY, ZZ, EE"
             const char *sent        = "g92 x1 y2 z3 e4";
             const char *expected    = "G92  SET POSITION           X:1, Y:2, Z:3, E:4                                                      ";
             test(sent, expected);
