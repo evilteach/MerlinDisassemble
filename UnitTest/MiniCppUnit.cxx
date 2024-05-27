@@ -135,7 +135,7 @@ int Assert::notEqualIndex( const std::string & one, const std::string & other )
 {
 	int end = (int) std::min(one.length(), other.length());
 	for ( int index = 0; index < end; index++ )
-		if (one[index] != other[index] )
+		if (one[(std::size_t) index] != other[(std::size_t) index] )
 			return index;
 	return end;
 }
@@ -155,10 +155,10 @@ void Assert::assertIguals( const std::string expected, const std::string result,
 	TestsListener::theInstance().errorsLog()
 		<< file << ", linia: " << linia << "\n"
 		<< errmsgTag_expected() << "\n\033[36;1m" 
-		<< expected.substr(0,indexDiferent)
-		<< "\033[32;1m" << expected.substr(indexDiferent) << "\033[0m\n"
-		<< errmsgTag_butWas() << "\033[36;1m \n" << result.substr(0,indexDiferent)
-		<< "\033[31;1m" << result.substr(indexDiferent) << "\033[0m\n";
+		<< expected.substr(0,(std::size_t)indexDiferent)
+		<< "\033[32;1m" << expected.substr((std::size_t)indexDiferent) << "\033[0m\n"
+		<< errmsgTag_butWas() << "\033[36;1m \n" << result.substr(0,(std::size_t) indexDiferent)
+		<< "\033[31;1m" << result.substr((std::size_t) indexDiferent) << "\033[0m\n";
 
 	TestsListener::theInstance().testHasFailed();
 }

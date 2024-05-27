@@ -39,6 +39,46 @@ class MerlinGCodeTests : public TestFixture<MerlinGCodeTests>
 
     void G0(void)
     {
+        const char *sent        = "g0 x10 y20 z30 e40 f100 s200";
+        const char *expected    = "G0   LINEAR MOVE            X:10, Y:20, Z:30, E:40(40), Speed:100, Power:200                        ";
+
+        {
+            std::ofstream out ("sent.txt");
+            out << sent << std::endl;
+        }
+
+        std::string command = "..\\Debug\\MerlinDisassemble.exe ";
+                    command += "sent.txt";
+
+        FILE *fp = _popen(command.c_str(), "r");
+        if (fp)
+        {
+            char buffer[1000] = "";
+            while (fgets(buffer, sizeof(buffer), fp) != nullptr)
+            {
+                std::size_t len = strlen(buffer);
+                if (len > 0)
+                {
+                    buffer[len - 1] = '\0';
+                }
+                else
+                {
+                }
+
+//               std::cout << strlen(buffer) << std::endl;
+//               std::cout << strlen(expected) << std::endl;
+//               std::cout << "<" << buffer << ">" << std::endl;
+//               std::cout << "<" << expected << ">" << std::endl;
+//
+                ASSERT_EQUALS(expected, buffer);
+            }
+
+            fclose(fp);
+        }
+        else
+        {
+            std::cerr << "Shit" << std::endl;
+        }
     }
 
     void G1(void)

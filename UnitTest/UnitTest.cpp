@@ -1,5 +1,6 @@
 
 #include "MiniCppUnit.hxx"
+#include <fstream>
 #include "UnitTest.hpp"
 
 int main
@@ -8,6 +9,4 @@ int main
 )
 {
     return TestFixtureFactory::theInstance().runTests() ? 0 : -1;
-
-    return 0;
 }
