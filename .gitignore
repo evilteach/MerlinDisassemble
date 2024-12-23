@@ -3,3 +3,8 @@ MerlinDisassemble
 /MerlinDisassemble.vc*
 /jan.txt
 /Debug/
+/obj/Debug/MerlinDisassemble.o
+/obj
+/MerlinDisassemble.layout
+/MerlinDisassemble.depend
+/MerlinDisassemble.cbp
